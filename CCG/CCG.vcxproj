@@ -163,19 +163,26 @@
     <ClCompile Include="card\curse.cpp" />
     <ClCompile Include="card\magic.cpp" />
     <ClCompile Include="CCG.cpp" />
+    <ClCompile Include="CGGGame.cpp" />
     <ClCompile Include="charactor.cpp" />
     <ClCompile Include="gameround.cpp" />
     <ClCompile Include="profession.cpp" />
+    <ClCompile Include="recorder.cpp" />
+    <ClCompile Include="scene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arena.h" />
     <ClInclude Include="cardStack.h" />
     <ClInclude Include="card\card.h" />
+    <ClInclude Include="CGGGame.h" />
+    <ClInclude Include="cgg_constant.h" />
     <ClInclude Include="charactor.h" />
     <ClInclude Include="creature.h" />
     <ClInclude Include="enum\CCG_enum.h" />
     <ClInclude Include="gameround.h" />
     <ClInclude Include="profession.h" />
+    <ClInclude Include="recorder.h" />
+    <ClInclude Include="scene.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\fighter.jpg" />

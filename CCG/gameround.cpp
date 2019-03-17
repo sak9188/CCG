@@ -2,11 +2,11 @@
 
 
 
-gameround::gameround()
+Gameround::Gameround(Arena* arena, Recorder* recorder)
 {
 }
 
 
-gameround::~gameround()
+Gameround::~Gameround()
 {
 }

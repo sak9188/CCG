@@ -34,6 +34,12 @@
     <Filter Include="源文件\IOmachine">
       <UniqueIdentifier>{12c37748-4b18-491f-a4bc-fe68df81608a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\console">
+      <UniqueIdentifier>{b704ea43-5cf1-4847-b668-6de965475057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\console\scene">
+      <UniqueIdentifier>{29f48a5c-c0bc-409e-9998-54b9d5973aa8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCG.cpp">
@@ -63,6 +69,15 @@
     <ClCompile Include="profession.cpp">
       <Filter>源文件\arena</Filter>
     </ClCompile>
+    <ClCompile Include="recorder.cpp">
+      <Filter>源文件\arena\round</Filter>
+    </ClCompile>
+    <ClCompile Include="CGGGame.cpp">
+      <Filter>源文件\console</Filter>
+    </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>源文件\console\scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="card\card.h">
@@ -88,6 +103,18 @@
     </ClInclude>
     <ClInclude Include="profession.h">
       <Filter>源文件\arena</Filter>
+    </ClInclude>
+    <ClInclude Include="recorder.h">
+      <Filter>源文件\arena\round</Filter>
+    </ClInclude>
+    <ClInclude Include="CGGGame.h">
+      <Filter>源文件\console</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>源文件\console\scene</Filter>
+    </ClInclude>
+    <ClInclude Include="cgg_constant.h">
+      <Filter>源文件\enum</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

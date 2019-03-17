@@ -4,6 +4,8 @@
 #include <SDL_image.h>
 #include <string>
 
+#include "CGGGame.h"
+
 #include "creature.h"
 #include "enum/CCG_enum.h"
 
@@ -11,8 +13,8 @@
 extern const int SCREEN_WIDTH = 1280;
 extern const int SCREEN_HEIGHT = 960;
 
-extern SDL_Window* WINDOW = NULL;
-extern SDL_Renderer* RENDERER = NULL;
+extern SDL_Window* MAIN_WINDOW = NULL;
+extern SDL_Renderer* MAIN_RENDERER = NULL;
 
 double gSpeed = 10;
 
@@ -52,6 +54,13 @@ Creature* c = new Creature("战士", RaceKind::MACHINE, RaceType::GROUND, Proper
 int main(int argc, char* args[])
 {
 
+	//game.init
+	CGGGame::gameInit();
+	
+	//game.start
+	
+	//game.close
+
 	//The surface contained by the window
 	SDL_Surface* screenSurface = NULL;
 
@@ -59,12 +68,8 @@ int main(int argc, char* args[])
 
 	SDL_Texture* texture = NULL;
 
-	//Creature* c = new Creature("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, 2, 3, 1, 0);
-
-	//int MOVEBLE_WIDTH = SCREEN_WIDTH;
-
 	//Initialize SDL
-	if (!init(WINDOW, screenSurface))
+	if (!init(MAIN_WINDOW, screenSurface))
 	{
 		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
 	}
@@ -84,13 +89,13 @@ int main(int argc, char* args[])
 				eventDispose(c->getRect());
 
 				//SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x1F, 0xFF, 0xFF));
-				SDL_SetRenderDrawColor(RENDERER, 0x00, 0x00, 0x00, 0x00);
-				SDL_RenderClear(RENDERER);
+				SDL_SetRenderDrawColor(MAIN_RENDERER, 0x00, 0x00, 0x00, 0x00);
+				SDL_RenderClear(MAIN_RENDERER);
 
 				//SDL_SetRenderDrawColor(RENDERER, 0x82, 0x5c, 0x42, 0xff);
-				SDL_RenderFillRect(RENDERER, c->getRect());
+				SDL_RenderFillRect(MAIN_RENDERER, c->getRect());
 				
-				SDL_RenderCopy(RENDERER, c->getTexture(), NULL, c->getRect());
+				SDL_RenderCopy(MAIN_RENDERER, c->getTexture(), NULL, c->getRect());
 
 				//Apply the image
 				//SDL_BlitSurface(gHello, NULL, screenSurface, moveble_rect);
@@ -98,7 +103,7 @@ int main(int argc, char* args[])
 				//Update the surface
 				//SDL_UpdateWindowSurface(WINDOW);
 
-				SDL_RenderPresent(RENDERER);
+				SDL_RenderPresent(MAIN_RENDERER);
 
 				//Wait two seconds
 				SDL_Delay(16.7);

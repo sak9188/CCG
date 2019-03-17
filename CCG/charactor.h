@@ -15,12 +15,14 @@ private:
 	int attack;
 	int defense;
 
-	CardStack* cards;
 	Profession* profession;
 
 
 public:
-	Charactor();
+	Charactor(std::string name, int life, int mage, int mageAccelerate, int attack, int defense,
+		Profession* profession) :life(life), name(name), mage(mage), mageAccelerate(mageAccelerate), attack(attack), defense(defense)
+	{};
+
 	~Charactor();
 };
 
