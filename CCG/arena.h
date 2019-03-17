@@ -7,8 +7,8 @@
 class Arena
 {
 private:
-	Charactor charactorA;
-	Charactor charactorB;
+	Charactor* charactorA;
+	Charactor* charactorB;
 
 	SDL_Surface* surface;
 	SDL_Texture* texture;

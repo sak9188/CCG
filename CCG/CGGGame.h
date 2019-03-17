@@ -1,8 +1,13 @@
 #ifndef CGGGAME_H
 #define CGGGAME_H
 
+#include "CCG_constant.h"
+
 class CGGGame
 {
+private:
+	
+	static bool initMainWindow();
 
 
 public:

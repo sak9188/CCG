@@ -40,6 +40,9 @@
     <Filter Include="源文件\console\scene">
       <UniqueIdentifier>{29f48a5c-c0bc-409e-9998-54b9d5973aa8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\console\scene\item">
+      <UniqueIdentifier>{12be618c-8829-4600-953e-8e159b07a65f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCG.cpp">
@@ -78,6 +81,12 @@
     <ClCompile Include="scene.cpp">
       <Filter>源文件\console\scene</Filter>
     </ClCompile>
+    <ClCompile Include="sceneItem.cpp">
+      <Filter>源文件\console\scene\item</Filter>
+    </ClCompile>
+    <ClCompile Include="media.cpp">
+      <Filter>源文件\IOmachine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="card\card.h">
@@ -113,8 +122,14 @@
     <ClInclude Include="scene.h">
       <Filter>源文件\console\scene</Filter>
     </ClInclude>
-    <ClInclude Include="cgg_constant.h">
+    <ClInclude Include="CCG_constant.h">
       <Filter>源文件\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="sceneItem.h">
+      <Filter>源文件\console\scene\item</Filter>
+    </ClInclude>
+    <ClInclude Include="media.h">
+      <Filter>源文件\IOmachine</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

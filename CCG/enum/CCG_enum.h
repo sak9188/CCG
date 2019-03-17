@@ -73,17 +73,6 @@ enum class ConsumeType
     MAGE,
     MAX_CONSUME_TYPE
 };
-
-enum class WindowsSize
-{
-	NORMALW = 1280,
-	NORMALH = 960,
-
-	LARGEW = 1920,
-	LARGEH = 1080,
-
-};
-
 #endif // CCG_ENUM_H
 
 

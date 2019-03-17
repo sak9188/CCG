@@ -58,8 +58,10 @@ int main(int argc, char* args[])
 	CGGGame::gameInit();
 	
 	//game.start
+	CGGGame::gameStart();
 	
 	//game.close
+	CGGGame::gameClose();
 
 	//The surface contained by the window
 	SDL_Surface* screenSurface = NULL;
