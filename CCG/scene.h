@@ -12,6 +12,16 @@ private:
 public:
 	Scene();
 	~Scene();
+
+	SDL_Surface* getSurface()
+	{
+		return surface;
+	}
+
+	SDL_Texture* getTexture()
+	{
+		return texture;
+	}
 };
 
 #endif // !SCENE_H

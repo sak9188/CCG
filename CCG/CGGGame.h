@@ -2,20 +2,30 @@
 #define CGGGAME_H
 
 #include "CCG_constant.h"
+#include "scene.h"
+#include "eventActor.h"
+
+//todo:: µ¥ÀýÄ£Ê½
 
 class CGGGame
 {
 private:
-	
-	static bool initMainWindow();
+	EventActor* eventActor;
+	Scene* initScene;
+
+	bool initMainWindow();
+	void closeMainWindow();
+
+
+
 
 
 public:
-	CGGGame() = delete;
+	CGGGame();
 
-	static void gameInit();
-	static void gameStart();
-	static void gameClose();
+	void gameInit();
+	void gameStart();
+	void gameClose();
 
 	~CGGGame();
 };

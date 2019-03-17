@@ -43,6 +43,9 @@
     <Filter Include="源文件\console\scene\item">
       <UniqueIdentifier>{12be618c-8829-4600-953e-8e159b07a65f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\console\event">
+      <UniqueIdentifier>{bef90fbe-fe43-43cd-b84a-202ff547885e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCG.cpp">
@@ -87,6 +90,9 @@
     <ClCompile Include="media.cpp">
       <Filter>源文件\IOmachine</Filter>
     </ClCompile>
+    <ClCompile Include="eventActor.cpp">
+      <Filter>源文件\console\event</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="card\card.h">
@@ -130,6 +136,9 @@
     </ClInclude>
     <ClInclude Include="media.h">
       <Filter>源文件\IOmachine</Filter>
+    </ClInclude>
+    <ClInclude Include="eventActor.h">
+      <Filter>源文件\console\event</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

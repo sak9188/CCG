@@ -8,6 +8,12 @@
 
 CGGGame::~CGGGame()
 {
+	delete initScene;
+}
+
+CGGGame::CGGGame()
+{
+	initScene = new Scene();
 }
 
 void CGGGame::gameInit()
@@ -23,7 +29,7 @@ void CGGGame::gameInit()
 		//Load media
 		Media* media = new Media();
 
-		if (!media->loadMedia(texture))
+		if (!media->loadMedia(initScene->getTexture))
 		{
 			printf("Failed to load media!\n");
 		}
@@ -66,7 +72,8 @@ void CGGGame::gameStart()
 }
 void CGGGame::gameClose()
 {
-
+	//close MainWindow
+	closeMainWindow();
 }
 
 bool CGGGame::initMainWindow()
@@ -100,17 +107,25 @@ bool CGGGame::initMainWindow()
 	return success;
 }
 
-void close(SDL_Window *&gWindow, SDL_Surface *&gHelloWorld)
+void CGGGame::closeMainWindow()
 {
+	//delete renderer
+	SDL_DestroyRenderer(MAIN_RENDERER);
+	MAIN_RENDERER = NULL;
+
 	//Deallocate surface
-	SDL_FreeSurface(gHelloWorld);
-	gHelloWorld = NULL;
+	SDL_FreeSurface(MAIN_SURFACE);
+	MAIN_SURFACE = NULL;
 
 	//Destroy window
-	SDL_DestroyWindow(gWindow);
-	gWindow = NULL;
+	SDL_DestroyWindow(MAIN_WINDOW);
+	MAIN_WINDOW = NULL;
 
 	//Quit SDL subsystems
 	IMG_Quit();
 	SDL_Quit();
+}
+
+void CGGGame::eventDispose()
+{
 }

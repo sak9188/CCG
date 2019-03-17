@@ -53,15 +53,17 @@ Creature* c = new Creature("战士", RaceKind::MACHINE, RaceType::GROUND, Proper
 
 int main(int argc, char* args[])
 {
+	//Create game object
+	CGGGame* mainGame = new CGGGame();
 
 	//game.init
-	CGGGame::gameInit();
+	mainGame->gameInit();
 	
 	//game.start
-	CGGGame::gameStart();
+	mainGame->gameStart();
 	
 	//game.close
-	CGGGame::gameClose();
+	mainGame->gameClose();
 
 	//The surface contained by the window
 	SDL_Surface* screenSurface = NULL;
