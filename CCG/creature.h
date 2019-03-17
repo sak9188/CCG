@@ -10,7 +10,7 @@ extern SDL_Renderer* RENDERER;
 extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
 
-class Creature : public Card
+class Creature final : public Card
 {
 private:
 	RaceType raceType;

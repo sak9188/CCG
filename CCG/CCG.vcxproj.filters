@@ -19,14 +19,20 @@
     <Filter Include="源文件\enum">
       <UniqueIdentifier>{4a843d07-2ef8-4a08-ab62-75ee4c249668}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\round">
-      <UniqueIdentifier>{732df494-aa17-4779-afff-a45a265fb162}</UniqueIdentifier>
-    </Filter>
     <Filter Include="资源文件\sound">
       <UniqueIdentifier>{8e74df58-1790-4c29-88c8-d54a8c141002}</UniqueIdentifier>
     </Filter>
     <Filter Include="资源文件\img">
       <UniqueIdentifier>{9a2d06aa-1ad1-40d2-ab6e-77bcfa45b7f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\arena">
+      <UniqueIdentifier>{366f9cd7-ff2d-4571-86d6-ac747132c216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\arena\round">
+      <UniqueIdentifier>{732df494-aa17-4779-afff-a45a265fb162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\IOmachine">
+      <UniqueIdentifier>{12c37748-4b18-491f-a4bc-fe68df81608a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -40,10 +46,22 @@
       <Filter>源文件\card</Filter>
     </ClCompile>
     <ClCompile Include="gameround.cpp">
-      <Filter>源文件\round</Filter>
+      <Filter>源文件\arena\round</Filter>
     </ClCompile>
     <ClCompile Include="card.cpp">
       <Filter>源文件\card</Filter>
+    </ClCompile>
+    <ClCompile Include="arena.cpp">
+      <Filter>源文件\arena</Filter>
+    </ClCompile>
+    <ClCompile Include="charactor.cpp">
+      <Filter>源文件\arena</Filter>
+    </ClCompile>
+    <ClCompile Include="cardStack.cpp">
+      <Filter>源文件\card</Filter>
+    </ClCompile>
+    <ClCompile Include="profession.cpp">
+      <Filter>源文件\arena</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -57,7 +75,19 @@
       <Filter>源文件\card</Filter>
     </ClInclude>
     <ClInclude Include="gameround.h">
-      <Filter>源文件\round</Filter>
+      <Filter>源文件\arena\round</Filter>
+    </ClInclude>
+    <ClInclude Include="arena.h">
+      <Filter>源文件\arena</Filter>
+    </ClInclude>
+    <ClInclude Include="charactor.h">
+      <Filter>源文件\arena</Filter>
+    </ClInclude>
+    <ClInclude Include="cardStack.h">
+      <Filter>源文件\card</Filter>
+    </ClInclude>
+    <ClInclude Include="profession.h">
+      <Filter>源文件\arena</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
