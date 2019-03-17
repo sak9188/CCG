@@ -46,6 +46,9 @@
     <Filter Include="源文件\console\event">
       <UniqueIdentifier>{bef90fbe-fe43-43cd-b84a-202ff547885e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\console\event\WIN">
+      <UniqueIdentifier>{68839648-3b19-455c-9355-2c8b25ef66b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCG.cpp">
@@ -93,6 +96,9 @@
     <ClCompile Include="eventActor.cpp">
       <Filter>源文件\console\event</Filter>
     </ClCompile>
+    <ClCompile Include="WINEventActor.cpp">
+      <Filter>源文件\console\event\WIN</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="card\card.h">
@@ -139,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="eventActor.h">
       <Filter>源文件\console\event</Filter>
+    </ClInclude>
+    <ClInclude Include="WINEventActor.h">
+      <Filter>源文件\console\event\WIN</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

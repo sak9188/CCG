@@ -24,6 +24,14 @@ public:
 		rect->h = getHeight(); 
 	}
 
+	~Card()
+	{
+		delete surface;
+		delete texture;
+
+		delete rect;
+	}
+
 	virtual void paintTexture() = 0;
 
 	double getWidth()

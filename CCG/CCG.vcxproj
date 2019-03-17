@@ -172,6 +172,7 @@
     <ClCompile Include="recorder.cpp" />
     <ClCompile Include="scene.cpp" />
     <ClCompile Include="sceneItem.cpp" />
+    <ClCompile Include="WINEventActor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arena.h" />
@@ -189,6 +190,7 @@
     <ClInclude Include="recorder.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="sceneItem.h" />
+    <ClInclude Include="WINEventActor.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="img\fighter.jpg" />
