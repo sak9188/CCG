@@ -35,6 +35,14 @@ void eventDispose(SDL_Rect* rect);
 
 SDL_Texture* loadTexture(std::string path);
 
+bool contactedCard(int x, int y);
+
+bool follow = false;
+
+SDL_Rect lastPos = { 0 };
+
+//===============================================================================
+
 bool quit = false;
 
 SDL_Event* e = new SDL_Event();
@@ -212,10 +220,34 @@ void eventDispose(SDL_Rect* moveble_rect)
 			quit = true;
 			break;
 		case (SDL_MOUSEMOTION):
-			printf("MX:%d MY:%d\n", e->motion.x, e->motion.y);
+			//printf("MX:%d MY:%d\n", e->motion.x, e->motion.y);
+			//SDL_Rect nowPos = c->getRec()
+			if (follow)
+			{
+				
+				c->getRect()->x += e->motion.x - lastPos.x;
+				c->getRect()->y += e->motion.y - lastPos.y;
+
+				lastPos.x = e->motion.x;
+				lastPos.y = e->motion.y;
+			}
 			break;
 		case (SDL_MOUSEBUTTONDOWN):
-			//if( contactedCard(e->motion.x, e->motion.y))
+
+			//printf("SDL_MOUSEBUTTONDOWN\n");
+			//printf("x:%d y:%d\n", c->getRect()->x, c->getRect()->y);
+			//printf("lx:%d, rx:%d, ty:%d, by:%d\n", c->getBoundaryLx(), c->getBoundaryRx(), c->getBoundaryTy(), c->getBoundaryBy());
+			if (contactedCard(e->motion.x, e->motion.y))
+			{
+				printf("contactedCard\n");
+				lastPos.x = e->motion.x;
+				lastPos.y = e->motion.y;
+				follow = true;
+			}
+			break;
+		case (SDL_MOUSEBUTTONUP):
+			if(follow)
+				follow = false;
 			break;
 		}
 

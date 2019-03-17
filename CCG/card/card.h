@@ -15,7 +15,7 @@ public:
     virtual ConsumeType getConsumeType() = 0;
 
 	Card(std::string name, CardType type, ConsumeType consumeType, int x, int y) :name(name),
-		cardType(cardType), consumeType(consumeType),x(x),y(y) 
+		cardType(cardType), consumeType(consumeType) 
 	{
 		rect = new SDL_Rect();
 		rect->x = x;
@@ -53,22 +53,22 @@ public:
 
 	int getBoundaryLx()
 	{
-		return x;
+		return rect->x;
 	}
 
 	int getBoundaryTy()
 	{
-		return y;
+		return rect->y;
 	}
 
 	int getBoundaryRx()
 	{
-		return x + getWidth();
+		return rect->x + getWidth();
 	}
 
 	int getBoundaryBy()
 	{
-		return y + getHeight();
+		return rect->y + getHeight();
 	}
 
 	SDL_Rect* getRect()
@@ -92,9 +92,6 @@ protected:
 	const int topHeight = 10;
 	const int midHeight = 54;
 	const int botHeight = 32;
-
-	int x;
-	int y;
 
 	int scal = 2.5;
 
