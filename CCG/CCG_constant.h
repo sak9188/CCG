@@ -4,15 +4,15 @@
 #include <SDL.h>
 #include "enum/CCG_enum.h"
 
-extern const int NORMAL_SCREEN_WIDTH = 1280;
-extern const int NORMAL_SCREEN_HEIGHT = 960;
+extern const int NORMAL_SCREEN_WIDTH ;
+extern const int NORMAL_SCREEN_HEIGHT ;
 
-extern const int LARGE_SCREEN_WIDTH = 1920;
-extern const int LARGE_SCREEN_HEIGHT = 1080;
+extern const int LARGE_SCREEN_WIDTH ;
+extern const int LARGE_SCREEN_HEIGHT ;
 
-extern SDL_Window* MAIN_WINDOW = NULL;
-extern SDL_Surface* MAIN_SURFACE = NULL;
-extern SDL_Renderer* MAIN_RENDERER = NULL;
+extern SDL_Window* CCG_MAIN_WINDOW ;
+extern SDL_Surface* CCG_MAIN_SURFACE ;
+extern SDL_Renderer* CCG_MAIN_RENDERER ;
 
 #endif // !CGG_CONSTANT_H
 

@@ -4,8 +4,8 @@
 #include "card/card.h"
 #include <SDL_image.h>
 
-extern SDL_Window* WINDOW;
-extern SDL_Renderer* RENDERER;
+extern SDL_Window* CCG_MAIN_RWINDOW;
+extern SDL_Renderer* CCG_MAIN_RENDERER;
 
 extern const int SCREEN_WIDTH;
 extern const int SCREEN_HEIGHT;
@@ -29,8 +29,8 @@ private:
 
 public:
 
-	Creature(std::string name , RaceKind raceKind, RaceType raceType, PropertyType proType,
-		int attack, int life, int defense, bool sacrifice, int x = 0, int y = 0) :Card(name, CardType::CREATURE, ConsumeType::MAGE, x, y),
+	Creature(std::string name , RaceKind raceKind, RaceType raceType, PropertyType proType,std::string des,
+		int attack, int life, int defense, bool sacrifice, int x = 0, int y = 0) :Card(name, CardType::CREATURE, ConsumeType::MAGE, x, y, des),
 		raceType(raceType), raceKind(raceKind), propertyType(proType), attack(attack), life(life), defense(defense), sacrifice(sacrifice)
 	{
 	}
@@ -47,11 +47,12 @@ public:
 
 	virtual void paintTexture()
 	{
+		//显示条
 		SDL_Rect* toprect = new SDL_Rect();
 		toprect->h = getHeight();
 		toprect->w = getWidth();
 
-		surface.reset(IMG_Load("img/fighter.jpg"));
+		surface.reset(IMG_Load("img/fighter.jpg"));//这个测试过后也要改掉
 		SDL_Surface* s = SDL_CreateRGBSurfaceWithFormat(0, getWidth(), getHeight(), 32, SDL_PIXELFORMAT_RGBA32);
 
 		SDL_Surface* optimizedSurface = SDL_ConvertSurface(surface.get(), s->format, NULL);
@@ -69,7 +70,7 @@ public:
 		toprect->h = getMidHeight();
 		SDL_BlitScaled(surface.get(), NULL, s, toprect);
 		
-		texture.reset(SDL_CreateTextureFromSurface(RENDERER, s));
+		texture.reset(SDL_CreateTextureFromSurface(CCG_MAIN_RENDERER, s));
 
 		//Free memory
 		SDL_FreeSurface(s);

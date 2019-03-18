@@ -3,8 +3,8 @@
 
 #include <SDL.h>
 
-#include "CCG_constant.h"
 #include "media.h"
+#include "WINEventActor.h"
 
 CGGGame::~CGGGame()
 {
@@ -13,8 +13,8 @@ CGGGame::~CGGGame()
 CGGGame::CGGGame()
 {
 	initScene = std::make_unique<Scene>();
-	eventActor = std::make_unique<EventActor>();
-	renderAcotor = std::make_unique<RenderAcotor>(MAIN_WINDOW, MAIN_RENDERER);
+	eventActor = std::make_unique<WINEventActor>();
+	renderAcotor = std::make_unique<RenderAcotor>(CCG_MAIN_WINDOW, CCG_MAIN_RENDERER);
 
 	currentScene = initScene.get();
 }
@@ -32,11 +32,15 @@ bool CGGGame::gameInit()
 		//Load media
 		Media* media = new Media();
 
-		if (!media->loadMedia(initScene->getTexture))
+		if (!media->loadMedia(*currentScene))
 		{
 			printf("Failed to load media!\n");
 			return false;
 		}
+
+		//把战士加入场景中
+		currentScene->addItem(ctest);
+
 
 		return true;
 
@@ -61,35 +65,17 @@ void CGGGame::gameLoop()
 	//整个游戏循环
 	while (!quit)
 	{
-		//事件处理
-		while (SDL_PollEvent(&e) != 0)
-		{
-			eventActor->eventDisposer(e, currentScene);
-		}
+		////事件处理
+		//while (SDL_PollEvent(&e) != 0)
+		//{
+		//	eventActor->eventDisposer(e, currentScene);
+		//}
 
 		//渲染处理
-		renderAcotor.renderScene(currentScene);
-
+		renderAcotor->renderScene(currentScene);
 
 		//游戏数据处理
-		
-
-		//SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x1F, 0xFF, 0xFF));
-		SDL_SetRenderDrawColor(MAIN_RENDERER, 0x00, 0x00, 0x00, 0x00);
-		SDL_RenderClear(MAIN_RENDERER);
-
-		//SDL_SetRenderDrawColor(RENDERER, 0x82, 0x5c, 0x42, 0xff);
-		SDL_RenderFillRect(MAIN_RENDERER, c->getRect());
-
-		SDL_RenderCopy(MAIN_RENDERER, c->getTexture(), NULL, c->getRect());
-
-		//Apply the image
-		//SDL_BlitSurface(gHello, NULL, screenSurface, moveble_rect);
-
-		//Update the surface
-		//SDL_UpdateWindowSurface(WINDOW);
-
-		SDL_RenderPresent(MAIN_RENDERER);
+	
 
 		//Wait for 60 fps
 		SDL_Delay(16.7);
@@ -110,9 +96,9 @@ bool CGGGame::initMainWindow()
 	else
 	{
 		//Create window
-		MAIN_WINDOW = SDL_CreateWindow("FUCK SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, NORMAL_SCREEN_WIDTH, NORMAL_SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-		MAIN_RENDERER = SDL_CreateRenderer(MAIN_WINDOW, -1, SDL_RENDERER_ACCELERATED);
-		if (MAIN_WINDOW == NULL)
+		CCG_MAIN_WINDOW = SDL_CreateWindow("FUCK SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, NORMAL_SCREEN_WIDTH, NORMAL_SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+		CCG_MAIN_RENDERER = SDL_CreateRenderer(CCG_MAIN_WINDOW, -1, SDL_RENDERER_ACCELERATED);
+		if (CCG_MAIN_WINDOW == NULL)
 		{
 			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
 			success = false;
@@ -120,7 +106,7 @@ bool CGGGame::initMainWindow()
 		else
 		{
 			//Get window surface
-			MAIN_SURFACE = SDL_GetWindowSurface(MAIN_WINDOW);
+			CCG_MAIN_SURFACE = SDL_GetWindowSurface(CCG_MAIN_WINDOW);
 		}
 	}
 
@@ -130,16 +116,16 @@ bool CGGGame::initMainWindow()
 void CGGGame::closeMainWindow()
 {
 	//delete renderer
-	SDL_DestroyRenderer(MAIN_RENDERER);
-	MAIN_RENDERER = NULL;
+	SDL_DestroyRenderer(CCG_MAIN_RENDERER);
+	CCG_MAIN_RENDERER = NULL;
 
 	//Deallocate surface
-	SDL_FreeSurface(MAIN_SURFACE);
-	MAIN_SURFACE = NULL;
+	SDL_FreeSurface(CCG_MAIN_SURFACE);
+	CCG_MAIN_SURFACE = NULL;
 
 	//Destroy window
-	SDL_DestroyWindow(MAIN_WINDOW);
-	MAIN_WINDOW = NULL;
+	SDL_DestroyWindow(CCG_MAIN_WINDOW);
+	CCG_MAIN_WINDOW = NULL;
 
 	//Quit SDL subsystems
 	IMG_Quit();

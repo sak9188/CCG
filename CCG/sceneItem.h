@@ -7,6 +7,8 @@ class SceneItem : public GameObject
 public:
 	SceneItem();
 	~SceneItem();
+
+	virtual void paintTexture();
 };
 
 #endif

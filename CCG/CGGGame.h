@@ -3,7 +3,6 @@
 
 #include <memory>
 
-#include "CCG_constant.h"
 #include "scene.h"
 #include "eventActor.h"
 #include "renderActor.h"
@@ -26,7 +25,7 @@ private:
 	void closeMainWindow();
 
 	SDL_Event e;
-	Creature* ctest = new Creature("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, 2, 3, 1, 0);
+	Creature* ctest = new Creature("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, "这是一个战士",2, 3, 1, 0, 0);
 
 
 

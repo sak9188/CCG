@@ -2,14 +2,19 @@
 
 #include <SDL_image.h>
 
-
-Scene::Scene()
+Scene::~Scene()
 {
 }
 
-
-Scene::~Scene()
+void Scene::addItems(GameObject* obj, ...)
 {
-	SDL_FreeSurface(surface);
-	SDL_DestroyTexture(texture);
+}
+
+void Scene::addItem(GameObject* obj)
+{
+	items.push_back(obj);
+}
+
+void Scene::paintTexture()
+{
 }

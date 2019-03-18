@@ -10,13 +10,13 @@
 class Scene : public GameObject
 {
 private:
-	std::unique_ptr<SDL_Surface> surface;
-	std::unique_ptr<SDL_Texture> texture;
+	std::vector<GameObject*> items;
 
-	std::vector<GameObject> items;
+	//Ê÷ÐÎ½á¹¹
+	std::vector<Scene> scenes;
 
 public:
-	Scene();
+	Scene() {};
 	~Scene();
 
 	SDL_Surface* getSurface()
@@ -29,11 +29,17 @@ public:
 		return texture.get();
 	}
 
-	std::vector<GameObject> getItems()
+	std::vector<GameObject*> getItems()
 	{
-
 		return items;
 	}
+
+	void addItems(GameObject* obj, ...);
+
+	void addItem(GameObject* obj);
+
+	virtual void paintTexture();
+
 };
 
 #endif // !SCENE_H

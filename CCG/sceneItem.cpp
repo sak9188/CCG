@@ -10,3 +10,7 @@ SceneItem::SceneItem()
 SceneItem::~SceneItem()
 {
 }
+
+void SceneItem::paintTexture()
+{
+}

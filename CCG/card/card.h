@@ -18,10 +18,10 @@ public:
     virtual CardType getCardType() = 0;
     virtual ConsumeType getConsumeType() = 0;
 
-	Card(std::string name, CardType type, ConsumeType consumeType, int x, int y) :name(name),
+	Card(std::string name, CardType type, ConsumeType consumeType, int x, int y, std::string str) :GameObject(str),name(name),
 		cardType(cardType), consumeType(consumeType) 
 	{
-		rect = new SDL_Rect();
+		rect.reset(new SDL_Rect());
 		rect->x = x;
 		rect->y = y;
 		rect->w = getWidth();
@@ -32,7 +32,7 @@ public:
 	{
 	}
 
-	virtual void paintTexture() = 0;
+	//virtual void paintTexture() = 0;
 
 	bool isContacted(int x, int y)
 	{
@@ -92,18 +92,10 @@ public:
 		return rect->y + getHeight();
 	}
 
-	SDL_Rect* getRect()
-	{
-		return rect.get();
-	}
-
 protected:
     std::string name;
     CardType cardType;
     ConsumeType consumeType;
-
-	std::unique_ptr<SDL_Surface> surface;
-	std::unique_ptr<SDL_Texture> texture;
 
 	unsigned int cardSeries;
 

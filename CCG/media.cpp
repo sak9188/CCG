@@ -9,14 +9,14 @@ Media::~Media()
 {
 }
 
-bool Media::loadMedia(SDL_Texture *&texture)
+bool Media::loadMedia(GameObject& obj)
 {
 	//Loading success flag
 	bool success = true;
 
 	//Load PNG texture
-	texture = loadTexture("img/sword.png");
-	if (texture == NULL)
+	obj.setTexture(loadTexture("img/sword.png"));
+	if (obj.getTexture() == NULL)
 	{
 		printf("Failed to load texture image!\n");
 		success = false;
@@ -39,7 +39,7 @@ SDL_Texture* Media::loadTexture(std::string path)
 	else
 	{
 		//Create texture from surface pixels
-		newTexture = SDL_CreateTextureFromSurface(MAIN_RENDERER, loadedSurface);
+		newTexture = SDL_CreateTextureFromSurface(CCG_MAIN_RENDERER, loadedSurface);
 		if (newTexture == NULL)
 		{
 			printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
