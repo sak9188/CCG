@@ -5,7 +5,9 @@
 #include <SDL.h>
 #include <string>
 
-class Card
+#include "../gameObject.h"
+
+class Card : public GameObject
 {
 public:
     virtual void setName(std::string name) = 0;
@@ -33,6 +35,19 @@ public:
 	}
 
 	virtual void paintTexture() = 0;
+
+	bool isContacted(int x, int y)
+	{
+		if (x < getBoundaryRx() && x > getBoundaryLx() && y > getBoundaryTy() && y < getBoundaryBy())
+			return true;
+		else
+			return false;
+	}
+
+	bool isContacted(const SDL_Rect& rect)
+	{
+		return isContacted(rect.x, rect.y);
+	}
 
 	double getWidth()
 	{

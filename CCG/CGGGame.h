@@ -19,16 +19,20 @@ private:
 	bool initMainWindow();
 	void closeMainWindow();
 
-	Creature* c = new Creature("սʿ", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, 2, 3, 1, 0);
+	Creature* ctest = new Creature("սʿ", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, 2, 3, 1, 0);
 
 
 
 public:
 	CGGGame();
 
+	bool quit = false;
+
 	bool gameInit();
 	void gameStart();
 	void gameClose();
+
+	void gameLoop();
 
 	~CGGGame();
 };

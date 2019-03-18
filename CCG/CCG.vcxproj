@@ -158,13 +158,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="arena.cpp" />
-    <ClCompile Include="card.cpp" />
     <ClCompile Include="cardStack.cpp" />
     <ClCompile Include="card\curse.cpp" />
     <ClCompile Include="card\magic.cpp" />
     <ClCompile Include="CCG.cpp" />
     <ClCompile Include="CGGGame.cpp" />
     <ClCompile Include="charactor.cpp" />
+    <ClCompile Include="gameObject.cpp" />
     <ClCompile Include="gameround.cpp" />
     <ClCompile Include="media.cpp" />
     <ClCompile Include="profession.cpp" />
@@ -183,6 +183,7 @@
     <ClInclude Include="creature.h" />
     <ClInclude Include="enum\CCG_enum.h" />
     <ClInclude Include="eventActor.h" />
+    <ClInclude Include="gameObject.h" />
     <ClInclude Include="gameround.h" />
     <ClInclude Include="media.h" />
     <ClInclude Include="profession.h" />

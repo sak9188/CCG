@@ -59,7 +59,7 @@ int main(int argc, char* args[])
 	//game.init
 	if (!mainGame->gameInit())
 	{
-
+		printf("Failed to initial game!\n");
 	}
 	
 	//game.start

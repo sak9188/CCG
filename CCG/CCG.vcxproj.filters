@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\card">
-      <UniqueIdentifier>{6d5ff052-50c5-4246-99a1-0ceac0623534}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\enum">
       <UniqueIdentifier>{4a843d07-2ef8-4a08-ab62-75ee4c249668}</UniqueIdentifier>
     </Filter>
@@ -37,17 +34,23 @@
     <Filter Include="源文件\console">
       <UniqueIdentifier>{b704ea43-5cf1-4847-b668-6de965475057}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\console\scene">
-      <UniqueIdentifier>{29f48a5c-c0bc-409e-9998-54b9d5973aa8}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\console\scene\item">
-      <UniqueIdentifier>{12be618c-8829-4600-953e-8e159b07a65f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\console\event">
       <UniqueIdentifier>{bef90fbe-fe43-43cd-b84a-202ff547885e}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\console\event\WIN">
       <UniqueIdentifier>{68839648-3b19-455c-9355-2c8b25ef66b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\abstract">
+      <UniqueIdentifier>{f8a4f71e-4150-45c4-a745-60c92354eff9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\abstract\scene">
+      <UniqueIdentifier>{29f48a5c-c0bc-409e-9998-54b9d5973aa8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\abstract\scene\item">
+      <UniqueIdentifier>{12be618c-8829-4600-953e-8e159b07a65f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\abstract\card">
+      <UniqueIdentifier>{6d5ff052-50c5-4246-99a1-0ceac0623534}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -55,16 +58,13 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="card\curse.cpp">
-      <Filter>源文件\card</Filter>
+      <Filter>源文件\abstract\card</Filter>
     </ClCompile>
     <ClCompile Include="card\magic.cpp">
-      <Filter>源文件\card</Filter>
+      <Filter>源文件\abstract\card</Filter>
     </ClCompile>
     <ClCompile Include="gameround.cpp">
       <Filter>源文件\arena\round</Filter>
-    </ClCompile>
-    <ClCompile Include="card.cpp">
-      <Filter>源文件\card</Filter>
     </ClCompile>
     <ClCompile Include="arena.cpp">
       <Filter>源文件\arena</Filter>
@@ -73,7 +73,7 @@
       <Filter>源文件\arena</Filter>
     </ClCompile>
     <ClCompile Include="cardStack.cpp">
-      <Filter>源文件\card</Filter>
+      <Filter>源文件\abstract\card</Filter>
     </ClCompile>
     <ClCompile Include="profession.cpp">
       <Filter>源文件\arena</Filter>
@@ -85,10 +85,10 @@
       <Filter>源文件\console</Filter>
     </ClCompile>
     <ClCompile Include="scene.cpp">
-      <Filter>源文件\console\scene</Filter>
+      <Filter>源文件\abstract\scene</Filter>
     </ClCompile>
     <ClCompile Include="sceneItem.cpp">
-      <Filter>源文件\console\scene\item</Filter>
+      <Filter>源文件\abstract\scene\item</Filter>
     </ClCompile>
     <ClCompile Include="media.cpp">
       <Filter>源文件\IOmachine</Filter>
@@ -96,16 +96,19 @@
     <ClCompile Include="WINEventActor.cpp">
       <Filter>源文件\console\event\WIN</Filter>
     </ClCompile>
+    <ClCompile Include="gameObject.cpp">
+      <Filter>源文件\abstract</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="card\card.h">
-      <Filter>源文件\card</Filter>
+      <Filter>源文件\abstract\card</Filter>
     </ClInclude>
     <ClInclude Include="enum\CCG_enum.h">
       <Filter>源文件\enum</Filter>
     </ClInclude>
     <ClInclude Include="creature.h">
-      <Filter>源文件\card</Filter>
+      <Filter>源文件\abstract\card</Filter>
     </ClInclude>
     <ClInclude Include="gameround.h">
       <Filter>源文件\arena\round</Filter>
@@ -117,7 +120,7 @@
       <Filter>源文件\arena</Filter>
     </ClInclude>
     <ClInclude Include="cardStack.h">
-      <Filter>源文件\card</Filter>
+      <Filter>源文件\abstract\card</Filter>
     </ClInclude>
     <ClInclude Include="profession.h">
       <Filter>源文件\arena</Filter>
@@ -129,13 +132,13 @@
       <Filter>源文件\console</Filter>
     </ClInclude>
     <ClInclude Include="scene.h">
-      <Filter>源文件\console\scene</Filter>
+      <Filter>源文件\abstract\scene</Filter>
     </ClInclude>
     <ClInclude Include="CCG_constant.h">
       <Filter>源文件\enum</Filter>
     </ClInclude>
     <ClInclude Include="sceneItem.h">
-      <Filter>源文件\console\scene\item</Filter>
+      <Filter>源文件\abstract\scene\item</Filter>
     </ClInclude>
     <ClInclude Include="media.h">
       <Filter>源文件\IOmachine</Filter>
@@ -145,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="WINEventActor.h">
       <Filter>源文件\console\event\WIN</Filter>
+    </ClInclude>
+    <ClInclude Include="gameObject.h">
+      <Filter>源文件\abstract</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -44,10 +44,21 @@ bool CGGGame::gameInit()
 void CGGGame::gameStart()
 {
 
-	c->paintTexture();
+	c->paintTexture();	
+	gameLoop();
+
+}
+void CGGGame::gameClose()
+{
+	//close MainWindow
+	closeMainWindow();
+}
+
+void CGGGame::gameLoop()
+{
 	while (!quit)
 	{
-		eventDispose(c->getRect());
+		eventActor->eventDisposer(ctest->getRect());
 
 		//SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x1F, 0xFF, 0xFF));
 		SDL_SetRenderDrawColor(MAIN_RENDERER, 0x00, 0x00, 0x00, 0x00);
@@ -69,12 +80,6 @@ void CGGGame::gameStart()
 		//Wait two seconds
 		SDL_Delay(16.7);
 	}
-
-}
-void CGGGame::gameClose()
-{
-	//close MainWindow
-	closeMainWindow();
 }
 
 bool CGGGame::initMainWindow()

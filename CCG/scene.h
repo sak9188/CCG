@@ -2,12 +2,15 @@
 #define SCENE_H
 
 #include <SDL.h>
+#include <memory>
 
-class Scene
+#include "gameObject.h"
+
+class Scene : public GameObject
 {
 private:
-	SDL_Surface* surface;
-	SDL_Texture* texture;
+	std::unique_ptr<SDL_Surface> surface;
+	std::unique_ptr<SDL_Texture> texture;
 
 public:
 	Scene();
@@ -15,12 +18,12 @@ public:
 
 	SDL_Surface* getSurface()
 	{
-		return surface;
+		return surface.get();
 	}
 
 	SDL_Texture* getTexture()
 	{
-		return texture;
+		return texture.get();
 	}
 };
 
