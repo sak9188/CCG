@@ -165,7 +165,6 @@
     <ClCompile Include="CCG.cpp" />
     <ClCompile Include="CGGGame.cpp" />
     <ClCompile Include="charactor.cpp" />
-    <ClCompile Include="eventActor.cpp" />
     <ClCompile Include="gameround.cpp" />
     <ClCompile Include="media.cpp" />
     <ClCompile Include="profession.cpp" />

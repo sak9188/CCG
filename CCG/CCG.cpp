@@ -57,7 +57,10 @@ int main(int argc, char* args[])
 	CGGGame* mainGame = new CGGGame();
 
 	//game.init
-	mainGame->gameInit();
+	if (!mainGame->gameInit())
+	{
+
+	}
 	
 	//game.start
 	mainGame->gameStart();

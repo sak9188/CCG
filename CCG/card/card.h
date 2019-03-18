@@ -94,6 +94,8 @@ protected:
 
 	SDL_Rect* rect;
 
+	unsigned int cardSeries;
+
 	const int width = 64;
 	const int height = 96;
 

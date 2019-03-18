@@ -8,20 +8,21 @@
 
 CGGGame::~CGGGame()
 {
-	delete initScene;
 }
 
 CGGGame::CGGGame()
 {
-	initScene = new Scene();
+	initScene = std::make_unique<Scene>();
+	eventActor = std::make_unique<EventActor>();
 }
 
-void CGGGame::gameInit()
+bool CGGGame::gameInit()
 {
 	
 	if (!initMainWindow())
 	{
 		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
+		return false;
 	}
 	else
 	{
@@ -32,42 +33,42 @@ void CGGGame::gameInit()
 		if (!media->loadMedia(initScene->getTexture))
 		{
 			printf("Failed to load media!\n");
+			return false;
 		}
-		else
-		{
-			c->paintTexture();
-			while (!quit)
-			{
-				eventDispose(c->getRect());
 
-				//SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x1F, 0xFF, 0xFF));
-				SDL_SetRenderDrawColor(MAIN_RENDERER, 0x00, 0x00, 0x00, 0x00);
-				SDL_RenderClear(MAIN_RENDERER);
-
-				//SDL_SetRenderDrawColor(RENDERER, 0x82, 0x5c, 0x42, 0xff);
-				SDL_RenderFillRect(MAIN_RENDERER, c->getRect());
-
-				SDL_RenderCopy(MAIN_RENDERER, c->getTexture(), NULL, c->getRect());
-
-				//Apply the image
-				//SDL_BlitSurface(gHello, NULL, screenSurface, moveble_rect);
-
-				//Update the surface
-				//SDL_UpdateWindowSurface(WINDOW);
-
-				SDL_RenderPresent(MAIN_RENDERER);
-
-				//Wait two seconds
-				SDL_Delay(16.7);
-			}
-
-		}
+		return true;
 
 	}
 }
 
 void CGGGame::gameStart()
 {
+
+	c->paintTexture();
+	while (!quit)
+	{
+		eventDispose(c->getRect());
+
+		//SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x1F, 0xFF, 0xFF));
+		SDL_SetRenderDrawColor(MAIN_RENDERER, 0x00, 0x00, 0x00, 0x00);
+		SDL_RenderClear(MAIN_RENDERER);
+
+		//SDL_SetRenderDrawColor(RENDERER, 0x82, 0x5c, 0x42, 0xff);
+		SDL_RenderFillRect(MAIN_RENDERER, c->getRect());
+
+		SDL_RenderCopy(MAIN_RENDERER, c->getTexture(), NULL, c->getRect());
+
+		//Apply the image
+		//SDL_BlitSurface(gHello, NULL, screenSurface, moveble_rect);
+
+		//Update the surface
+		//SDL_UpdateWindowSurface(WINDOW);
+
+		SDL_RenderPresent(MAIN_RENDERER);
+
+		//Wait two seconds
+		SDL_Delay(16.7);
+	}
 
 }
 void CGGGame::gameClose()
@@ -124,8 +125,4 @@ void CGGGame::closeMainWindow()
 	//Quit SDL subsystems
 	IMG_Quit();
 	SDL_Quit();
-}
-
-void CGGGame::eventDispose()
-{
 }

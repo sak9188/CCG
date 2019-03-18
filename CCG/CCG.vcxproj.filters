@@ -93,9 +93,6 @@
     <ClCompile Include="media.cpp">
       <Filter>源文件\IOmachine</Filter>
     </ClCompile>
-    <ClCompile Include="eventActor.cpp">
-      <Filter>源文件\console\event</Filter>
-    </ClCompile>
     <ClCompile Include="WINEventActor.cpp">
       <Filter>源文件\console\event\WIN</Filter>
     </ClCompile>

@@ -5,8 +5,8 @@
 class EventActor
 {
 public:
-	EventActor();
-	~EventActor();
+	virtual void eventDisposer();
+	virtual ~EventActor() {};
 
 
 };
