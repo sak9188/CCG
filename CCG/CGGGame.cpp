@@ -14,7 +14,6 @@ CGGGame::CGGGame()
 {
 	initScene = std::make_unique<Scene>();
 	eventActor = std::make_unique<WINEventActor>();
-	renderAcotor = std::make_unique<RenderAcotor>(CCG_MAIN_WINDOW, CCG_MAIN_RENDERER);
 
 	currentScene = initScene.get();
 }
@@ -65,11 +64,11 @@ void CGGGame::gameLoop()
 	//整个游戏循环
 	while (!quit)
 	{
-		////事件处理
-		//while (SDL_PollEvent(&e) != 0)
-		//{
-		//	eventActor->eventDisposer(e, currentScene);
-		//}
+		//事件处理
+		while (SDL_PollEvent(&e) != 0)
+		{
+			//eventActor->eventDisposer(e, currentScene);
+		}
 
 		//渲染处理
 		renderAcotor->renderScene(currentScene);
@@ -78,7 +77,8 @@ void CGGGame::gameLoop()
 	
 
 		//Wait for 60 fps
-		SDL_Delay(16.7);
+		//SDL_Delay(16.7);
+		SDL_Delay(500);
 	}
 }
 
@@ -98,6 +98,8 @@ bool CGGGame::initMainWindow()
 		//Create window
 		CCG_MAIN_WINDOW = SDL_CreateWindow("FUCK SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, NORMAL_SCREEN_WIDTH, NORMAL_SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
 		CCG_MAIN_RENDERER = SDL_CreateRenderer(CCG_MAIN_WINDOW, -1, SDL_RENDERER_ACCELERATED);
+		renderAcotor = std::make_unique<RenderAcotor>(CCG_MAIN_WINDOW, CCG_MAIN_RENDERER);
+
 		if (CCG_MAIN_WINDOW == NULL)
 		{
 			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());

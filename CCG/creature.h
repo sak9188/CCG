@@ -7,9 +7,6 @@
 extern SDL_Window* CCG_MAIN_RWINDOW;
 extern SDL_Renderer* CCG_MAIN_RENDERER;
 
-extern const int SCREEN_WIDTH;
-extern const int SCREEN_HEIGHT;
-
 class Creature final : public Card
 {
 private:
@@ -61,8 +58,6 @@ public:
 			printf("Unable to optimize image! SDL Error: %s\n", SDL_GetError());
 		}
 
-		//Get rid of old loaded surface
-		SDL_FreeSurface(surface.get());
 		surface.reset(optimizedSurface);
 		
 		SDL_FillRect(s, toprect, SDL_MapRGB(s->format, 130, 92, 66));
@@ -74,7 +69,6 @@ public:
 
 		//Free memory
 		SDL_FreeSurface(s);
-		SDL_FreeSurface(optimizedSurface);
 	}
 
 	void setRaceType(RaceType type)

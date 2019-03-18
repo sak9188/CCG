@@ -25,7 +25,7 @@ private:
 	void closeMainWindow();
 
 	SDL_Event e;
-	Creature* ctest = new Creature("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, "这是一个战士",2, 3, 1, 0, 0);
+	Creature* ctest = new Creature("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, "123123",2, 3, 1, 0, 0);
 
 
 
