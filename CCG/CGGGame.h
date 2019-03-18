@@ -19,6 +19,7 @@ private:
 	bool initMainWindow();
 	void closeMainWindow();
 
+	SDL_Event e;
 	Creature* ctest = new Creature("սʿ", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, 2, 3, 1, 0);
 
 

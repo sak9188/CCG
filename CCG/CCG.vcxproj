@@ -159,8 +159,6 @@
   <ItemGroup>
     <ClCompile Include="arena.cpp" />
     <ClCompile Include="cardStack.cpp" />
-    <ClCompile Include="card\curse.cpp" />
-    <ClCompile Include="card\magic.cpp" />
     <ClCompile Include="CCG.cpp" />
     <ClCompile Include="CGGGame.cpp" />
     <ClCompile Include="charactor.cpp" />

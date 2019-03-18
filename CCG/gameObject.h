@@ -2,10 +2,12 @@
 #define GAME_OBJECT_H
 
 #include <SDL.h>
+#include <memory>
+
 class GameObject
 {
-private:
-
+protected:
+	std::unique_ptr<SDL_Rect> rect;
 
 public:
 	GameObject();

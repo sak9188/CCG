@@ -51,26 +51,27 @@ public:
 		toprect->h = getHeight();
 		toprect->w = getWidth();
 
-		surface = IMG_Load("img/fighter.jpg");
+		surface.reset(IMG_Load("img/fighter.jpg"));
 		SDL_Surface* s = SDL_CreateRGBSurfaceWithFormat(0, getWidth(), getHeight(), 32, SDL_PIXELFORMAT_RGBA32);
 
-		SDL_Surface* optimizedSurface = SDL_ConvertSurface(surface, s->format, NULL);
+		SDL_Surface* optimizedSurface = SDL_ConvertSurface(surface.get(), s->format, NULL);
 		if (optimizedSurface == NULL)
 		{
 			printf("Unable to optimize image! SDL Error: %s\n", SDL_GetError());
 		}
 
 		//Get rid of old loaded surface
-		SDL_FreeSurface(surface);
-		surface = optimizedSurface;
+		SDL_FreeSurface(surface.get());
+		surface.reset(optimizedSurface);
 		
 		SDL_FillRect(s, toprect, SDL_MapRGB(s->format, 130, 92, 66));
 		toprect->y = getTopHeight();
 		toprect->h = getMidHeight();
-		SDL_BlitScaled(surface, NULL, s, toprect);
+		SDL_BlitScaled(surface.get(), NULL, s, toprect);
 		
-		texture = SDL_CreateTextureFromSurface(RENDERER, s);
+		texture.reset(SDL_CreateTextureFromSurface(RENDERER, s));
 
+		//Free memory
 		SDL_FreeSurface(s);
 		SDL_FreeSurface(optimizedSurface);
 	}
@@ -162,7 +163,7 @@ public:
 
 	SDL_Texture* getTexture()
 	{
-		return texture;
+		return texture.get();
 	}
 
 };

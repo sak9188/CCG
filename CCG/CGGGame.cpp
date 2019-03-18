@@ -56,9 +56,21 @@ void CGGGame::gameClose()
 
 void CGGGame::gameLoop()
 {
+	//整个游戏循环
 	while (!quit)
 	{
-		eventActor->eventDisposer(ctest->getRect());
+		//事件处理
+		while (SDL_PollEvent(&e) != 0)
+		{
+			eventActor->eventDisposer(e, ctest);
+		}
+
+		//渲染处理
+
+
+
+		//游戏数据处理
+		
 
 		//SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x1F, 0xFF, 0xFF));
 		SDL_SetRenderDrawColor(MAIN_RENDERER, 0x00, 0x00, 0x00, 0x00);

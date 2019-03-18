@@ -1,10 +1,12 @@
 #ifndef CARD_H
 #define CARD_H
 
-#include "../enum/CCG_enum.h"
+
 #include <SDL.h>
 #include <string>
+#include <memory>
 
+#include "../enum/CCG_enum.h"
 #include "../gameObject.h"
 
 class Card : public GameObject
@@ -28,10 +30,6 @@ public:
 
 	~Card()
 	{
-		delete surface;
-		delete texture;
-
-		delete rect;
 	}
 
 	virtual void paintTexture() = 0;
@@ -96,7 +94,7 @@ public:
 
 	SDL_Rect* getRect()
 	{
-		return rect;
+		return rect.get();
 	}
 
 protected:
@@ -104,10 +102,8 @@ protected:
     CardType cardType;
     ConsumeType consumeType;
 
-	SDL_Surface* surface;
-	SDL_Texture* texture;
-
-	SDL_Rect* rect;
+	std::unique_ptr<SDL_Surface> surface;
+	std::unique_ptr<SDL_Texture> texture;
 
 	unsigned int cardSeries;
 

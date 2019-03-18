@@ -57,12 +57,6 @@
     <ClCompile Include="CCG.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="card\curse.cpp">
-      <Filter>源文件\abstract\card</Filter>
-    </ClCompile>
-    <ClCompile Include="card\magic.cpp">
-      <Filter>源文件\abstract\card</Filter>
-    </ClCompile>
     <ClCompile Include="gameround.cpp">
       <Filter>源文件\arena\round</Filter>
     </ClCompile>
