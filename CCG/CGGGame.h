@@ -6,7 +6,9 @@
 #include "CCG_constant.h"
 #include "scene.h"
 #include "eventActor.h"
+#include "renderActor.h"
 #include "creature.h"
+
 
 //todo:: µ¥ÀýÄ£Ê½
 
@@ -14,7 +16,11 @@ class CGGGame
 {
 private:
 	std::unique_ptr<EventActor> eventActor;
+	std::unique_ptr<RenderAcotor> renderAcotor;
 	std::unique_ptr<Scene> initScene;
+	
+
+	Scene* currentScene;
 
 	bool initMainWindow();
 	void closeMainWindow();

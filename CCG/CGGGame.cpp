@@ -14,19 +14,21 @@ CGGGame::CGGGame()
 {
 	initScene = std::make_unique<Scene>();
 	eventActor = std::make_unique<EventActor>();
+	renderAcotor = std::make_unique<RenderAcotor>(MAIN_WINDOW, MAIN_RENDERER);
+
+	currentScene = initScene.get();
 }
 
 bool CGGGame::gameInit()
 {
-	
+	//Create window
 	if (!initMainWindow())
 	{
 		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
 		return false;
 	}
 	else
-	{
-		//Create window
+	{		
 		//Load media
 		Media* media = new Media();
 
@@ -44,7 +46,7 @@ bool CGGGame::gameInit()
 void CGGGame::gameStart()
 {
 
-	c->paintTexture();	
+	ctest->paintTexture();	
 	gameLoop();
 
 }
@@ -62,11 +64,11 @@ void CGGGame::gameLoop()
 		//事件处理
 		while (SDL_PollEvent(&e) != 0)
 		{
-			eventActor->eventDisposer(e, ctest);
+			eventActor->eventDisposer(e, currentScene);
 		}
 
 		//渲染处理
-
+		renderAcotor.renderScene(currentScene);
 
 
 		//游戏数据处理
@@ -89,7 +91,7 @@ void CGGGame::gameLoop()
 
 		SDL_RenderPresent(MAIN_RENDERER);
 
-		//Wait two seconds
+		//Wait for 60 fps
 		SDL_Delay(16.7);
 	}
 }

@@ -52,6 +52,9 @@
     <Filter Include="源文件\abstract\card">
       <UniqueIdentifier>{6d5ff052-50c5-4246-99a1-0ceac0623534}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\console\render">
+      <UniqueIdentifier>{cf4e3c75-19f5-4689-8743-77b93dc10024}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CCG.cpp">
@@ -145,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="gameObject.h">
       <Filter>源文件\abstract</Filter>
+    </ClInclude>
+    <ClInclude Include="renderActor.h">
+      <Filter>源文件\console\render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

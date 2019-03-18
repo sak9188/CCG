@@ -9,35 +9,27 @@
 #include "creature.h"
 #include "enum/CCG_enum.h"
 
-//Screen dimension constants
-extern const int SCREEN_WIDTH = 1280;
-extern const int SCREEN_HEIGHT = 960;
-
-extern SDL_Window* MAIN_WINDOW = NULL;
-extern SDL_Renderer* MAIN_RENDERER = NULL;
-
-double gSpeed = 10;
 
 //Starts up SDL and creates window
-bool init(SDL_Window *&gWindow, SDL_Surface *&gScreenSurface);
+//bool init(SDL_Window *&gWindow, SDL_Surface *&gScreenSurface);
 
 //Loads media
-bool loadMedia(SDL_Texture *&texture);
+//bool loadMedia(SDL_Texture *&texture);
 
 //Frees media and shuts down SDL
-void close(SDL_Window *&gWindow, SDL_Surface *&gHelloWorld);
+//void close(SDL_Window *&gWindow, SDL_Surface *&gHelloWorld);
 
-void moveCharacter(SDL_Rect* pos, const SDL_Scancode code);
+//void moveCharacter(SDL_Rect* pos, const SDL_Scancode code);
 
-void keydownDispose(SDL_Event* e, SDL_Rect* pos);
+//void keydownDispose(SDL_Event* e, SDL_Rect* pos);
 
-double getSpeedValue(int base = 1);
+//double getSpeedValue(int base = 1);
 
-void eventDispose(SDL_Rect* rect);
+//void eventDispose(SDL_Rect* rect);
 
-SDL_Texture* loadTexture(std::string path);
+//SDL_Texture* loadTexture(std::string path);
 
-bool contactedCard(int x, int y);
+//bool contactedCard(int x, int y);
 
 bool follow = false;
 
@@ -69,153 +61,153 @@ int main(int argc, char* args[])
 	mainGame->gameClose();
 
 	//The surface contained by the window
-	SDL_Surface* screenSurface = NULL;
+	//SDL_Surface* screenSurface = NULL;
 
-	SDL_Surface* gHello = NULL;
+	//SDL_Surface* gHello = NULL;
 
-	SDL_Texture* texture = NULL;
+	//SDL_Texture* texture = NULL;
 
-	//Initialize SDL
-	if (!init(MAIN_WINDOW, screenSurface))
-	{
-		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
-	}
-	else
-	{
-		//Create window
-		//Load media
-		if (!loadMedia(texture))
-		{
-			printf("Failed to load media!\n");
-		}
-		else
-		{
-			c->paintTexture();
-			while (!quit)
-			{
-				eventDispose(c->getRect());
+	////Initialize SDL
+	//if (!init(MAIN_WINDOW, screenSurface))
+	//{
+	//	printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
+	//}
+	//else
+	//{
+	//	//Create window
+	//	//Load media
+	//	if (!loadMedia(texture))
+	//	{
+	//		printf("Failed to load media!\n");
+	//	}
+	//	else
+	//	{
+	//		c->paintTexture();
+	//		while (!quit)
+	//		{
+	//			eventDispose(c->getRect());
 
-				//SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x1F, 0xFF, 0xFF));
-				SDL_SetRenderDrawColor(MAIN_RENDERER, 0x00, 0x00, 0x00, 0x00);
-				SDL_RenderClear(MAIN_RENDERER);
+	//			//SDL_FillRect(screenSurface, NULL, SDL_MapRGB(screenSurface->format, 0x1F, 0xFF, 0xFF));
+	//			SDL_SetRenderDrawColor(MAIN_RENDERER, 0x00, 0x00, 0x00, 0x00);
+	//			SDL_RenderClear(MAIN_RENDERER);
 
-				//SDL_SetRenderDrawColor(RENDERER, 0x82, 0x5c, 0x42, 0xff);
-				SDL_RenderFillRect(MAIN_RENDERER, c->getRect());
-				
-				SDL_RenderCopy(MAIN_RENDERER, c->getTexture(), NULL, c->getRect());
+	//			//SDL_SetRenderDrawColor(RENDERER, 0x82, 0x5c, 0x42, 0xff);
+	//			SDL_RenderFillRect(MAIN_RENDERER, c->getRect());
+	//			
+	//			SDL_RenderCopy(MAIN_RENDERER, c->getTexture(), NULL, c->getRect());
 
-				//Apply the image
-				//SDL_BlitSurface(gHello, NULL, screenSurface, moveble_rect);
+	//			//Apply the image
+	//			//SDL_BlitSurface(gHello, NULL, screenSurface, moveble_rect);
 
-				//Update the surface
-				//SDL_UpdateWindowSurface(WINDOW);
+	//			//Update the surface
+	//			//SDL_UpdateWindowSurface(WINDOW);
 
-				SDL_RenderPresent(MAIN_RENDERER);
+	//			SDL_RenderPresent(MAIN_RENDERER);
 
-				//Wait two seconds
-				SDL_Delay(16.7);
-			}
+	//			//Wait two seconds
+	//			SDL_Delay(16.7);
+	//		}
 
-		}
+	//	}
 
-	}
+	//}
 
-	close(WINDOW, screenSurface);
+	//close(WINDOW, screenSurface);
 
 	return 0;
 }
 
-bool init(SDL_Window *&gWindow, SDL_Surface *&gScreenSurface)
-{
-	//Initialization flag
-	bool success = true;
+//bool init(SDL_Window *&gWindow, SDL_Surface *&gScreenSurface)
+//{
+//	//Initialization flag
+//	bool success = true;
+//
+//	//Initialize SDL
+//	if (SDL_Init(SDL_INIT_VIDEO) < 0)
+//	{
+//		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
+//		success = false;
+//	}
+//	else
+//	{
+//		//Create window
+//		gWindow = SDL_CreateWindow("FUCK SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
+//		RENDERER = SDL_CreateRenderer(WINDOW, -1, SDL_RENDERER_ACCELERATED);
+//		if (gWindow == NULL)
+//		{
+//			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
+//			success = false;
+//		}
+//		else
+//		{
+//			//Get window surface
+//			gScreenSurface = SDL_GetWindowSurface(gWindow);
+//		}
+//	}
+//
+//	return success;
+//}
 
-	//Initialize SDL
-	if (SDL_Init(SDL_INIT_VIDEO) < 0)
-	{
-		printf("SDL could not initialize! SDL_Error: %s\n", SDL_GetError());
-		success = false;
-	}
-	else
-	{
-		//Create window
-		gWindow = SDL_CreateWindow("FUCK SDL Tutorial", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, SCREEN_WIDTH, SCREEN_HEIGHT, SDL_WINDOW_SHOWN);
-		RENDERER = SDL_CreateRenderer(WINDOW, -1, SDL_RENDERER_ACCELERATED);
-		if (gWindow == NULL)
-		{
-			printf("Window could not be created! SDL_Error: %s\n", SDL_GetError());
-			success = false;
-		}
-		else
-		{
-			//Get window surface
-			gScreenSurface = SDL_GetWindowSurface(gWindow);
-		}
-	}
+//bool loadMedia(SDL_Texture *&texture)
+//{
+//	//Loading success flag
+//	bool success = true;
+//
+//	//Load PNG texture
+//	texture = loadTexture("img/sword.png");
+//	if (texture == NULL)
+//	{
+//		printf("Failed to load texture image!\n");
+//		success = false;
+//	}
+//
+//	return success;
+//}
 
-	return success;
-}
+//void close(SDL_Window *&gWindow, SDL_Surface *&gHelloWorld)
+//{
+//	//Deallocate surface
+//	SDL_FreeSurface(gHelloWorld);
+//	gHelloWorld = NULL;
+//
+//	//Destroy window
+//	SDL_DestroyWindow(gWindow);
+//	gWindow = NULL;
+//
+//	//Quit SDL subsystems
+//	IMG_Quit();
+//	SDL_Quit();
+//}
 
-bool loadMedia(SDL_Texture *&texture)
-{
-	//Loading success flag
-	bool success = true;
+//void moveCharacter(SDL_Rect* pos, const SDL_Scancode code)
+//{
+//	switch (code)
+//	{
+//	case (SDL_SCANCODE_UP):
+//		pos->y -= getSpeedValue();
+//		break;
+//	case (SDL_SCANCODE_DOWN):
+//		pos->y += getSpeedValue();
+//		break;
+//	case (SDL_SCANCODE_LEFT):
+//		pos->x -= getSpeedValue();
+//		break;
+//	case (SDL_SCANCODE_RIGHT):
+//		pos->x += getSpeedValue();
+//	}
+//
+//	printf("x:%d y:%d \n", pos->x, pos->y);
+//}
+//
+//double getSpeedValue(int base)
+//{
+//	return base * gSpeed;
+//}
 
-	//Load PNG texture
-	texture = loadTexture("img/sword.png");
-	if (texture == NULL)
-	{
-		printf("Failed to load texture image!\n");
-		success = false;
-	}
-
-	return success;
-}
-
-void close(SDL_Window *&gWindow, SDL_Surface *&gHelloWorld)
-{
-	//Deallocate surface
-	SDL_FreeSurface(gHelloWorld);
-	gHelloWorld = NULL;
-
-	//Destroy window
-	SDL_DestroyWindow(gWindow);
-	gWindow = NULL;
-
-	//Quit SDL subsystems
-	IMG_Quit();
-	SDL_Quit();
-}
-
-void moveCharacter(SDL_Rect* pos, const SDL_Scancode code)
-{
-	switch (code)
-	{
-	case (SDL_SCANCODE_UP):
-		pos->y -= getSpeedValue();
-		break;
-	case (SDL_SCANCODE_DOWN):
-		pos->y += getSpeedValue();
-		break;
-	case (SDL_SCANCODE_LEFT):
-		pos->x -= getSpeedValue();
-		break;
-	case (SDL_SCANCODE_RIGHT):
-		pos->x += getSpeedValue();
-	}
-
-	printf("x:%d y:%d \n", pos->x, pos->y);
-}
-
-double getSpeedValue(int base)
-{
-	return base * gSpeed;
-}
-
-void keydownDispose(SDL_Event* e, SDL_Rect* pos)
-{
-	moveCharacter(pos, e->key.keysym.scancode);
-}
+//void keydownDispose(SDL_Event* e, SDL_Rect* pos)
+//{
+//	moveCharacter(pos, e->key.keysym.scancode);
+//}
 
 void eventDispose(SDL_Rect* moveble_rect)
 {
@@ -267,37 +259,29 @@ void eventDispose(SDL_Rect* moveble_rect)
 
 }
 
-bool contactedCard(int x, int y)
-{
-	if (x < c->getBoundaryRx() && x > c->getBoundaryLx() && y > c->getBoundaryTy() && y < c->getBoundaryBy())
-		return true;
-	else
-		return false;
-}
-
-SDL_Texture* loadTexture(std::string path)
-{
-	//The final texture
-	SDL_Texture* newTexture = NULL;
-
-	//Load image at specified path
-	SDL_Surface* loadedSurface = IMG_Load(path.c_str());
-	if (loadedSurface == NULL)
-	{
-		printf("Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError());
-	}
-	else
-	{
-		//Create texture from surface pixels
-		newTexture = SDL_CreateTextureFromSurface(RENDERER, loadedSurface);
-		if (newTexture == NULL)
-		{
-			printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
-		}
-
-		//Get rid of old loaded surface
-		SDL_FreeSurface(loadedSurface);
-	}
-
-	return newTexture;
-}
+//SDL_Texture* loadTexture(std::string path)
+//{
+//	//The final texture
+//	SDL_Texture* newTexture = NULL;
+//
+//	//Load image at specified path
+//	SDL_Surface* loadedSurface = IMG_Load(path.c_str());
+//	if (loadedSurface == NULL)
+//	{
+//		printf("Unable to load image %s! SDL_image Error: %s\n", path.c_str(), IMG_GetError());
+//	}
+//	else
+//	{
+//		//Create texture from surface pixels
+//		newTexture = SDL_CreateTextureFromSurface(RENDERER, loadedSurface);
+//		if (newTexture == NULL)
+//		{
+//			printf("Unable to create texture from %s! SDL Error: %s\n", path.c_str(), SDL_GetError());
+//		}
+//
+//		//Get rid of old loaded surface
+//		SDL_FreeSurface(loadedSurface);
+//	}
+//
+//	return newTexture;
+//}

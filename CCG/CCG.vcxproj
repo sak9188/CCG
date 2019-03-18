@@ -186,6 +186,7 @@
     <ClInclude Include="media.h" />
     <ClInclude Include="profession.h" />
     <ClInclude Include="recorder.h" />
+    <ClInclude Include="renderActor.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="sceneItem.h" />
     <ClInclude Include="WINEventActor.h" />

@@ -3,6 +3,7 @@
 
 #include <SDL.h>
 #include <memory>
+#include <vector>
 
 #include "gameObject.h"
 
@@ -11,6 +12,8 @@ class Scene : public GameObject
 private:
 	std::unique_ptr<SDL_Surface> surface;
 	std::unique_ptr<SDL_Texture> texture;
+
+	std::vector<GameObject> items;
 
 public:
 	Scene();
@@ -24,6 +27,12 @@ public:
 	SDL_Texture* getTexture()
 	{
 		return texture.get();
+	}
+
+	std::vector<GameObject> getItems()
+	{
+
+		return items;
 	}
 };
 
