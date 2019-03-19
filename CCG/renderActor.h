@@ -28,13 +28,12 @@ public:
 	void renderScene(Scene* scene)
 	{
 		renderClearInBlack();
-		update();
 
 		//±éÀúÒ»¸öÈİÆ÷
 		for (auto val : scene->getItems())
 		{
 			val->paintTexture();
-			std::cout << "name:" << val->getDes() << "\n";
+			//std::cout << "name:" << val->getDes() << "\n";
 			renderGameObject(val);
 		}
 

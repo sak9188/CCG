@@ -67,7 +67,7 @@ void CGGGame::gameLoop()
 		//事件处理
 		while (SDL_PollEvent(&e) != 0)
 		{
-			//eventActor->eventDisposer(e, currentScene);
+			eventActor->eventDisposer(e, *currentScene);
 		}
 
 		//渲染处理
@@ -77,8 +77,8 @@ void CGGGame::gameLoop()
 	
 
 		//Wait for 60 fps
-		//SDL_Delay(16.7);
-		SDL_Delay(500);
+		SDL_Delay(16.7);
+		//SDL_Delay(500);
 	}
 }
 

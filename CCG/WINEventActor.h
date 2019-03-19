@@ -10,7 +10,7 @@ class WINEventActor : public EventActor
 public:
 	WINEventActor();
 
-	virtual void eventDisposer(const SDL_Event& e, GameObject* ob);
+	virtual void eventDisposer(const SDL_Event& e, GameObject& ob);
 
 	virtual ~WINEventActor() {};
 };

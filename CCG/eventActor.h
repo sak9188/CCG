@@ -7,7 +7,7 @@
 class EventActor
 {
 public:
-	virtual void eventDisposer(const SDL_Event& e, GameObject* ob) = 0;
+	virtual void eventDisposer(const SDL_Event& e, GameObject& ob) = 0;
 	virtual ~EventActor() {};
 
 
