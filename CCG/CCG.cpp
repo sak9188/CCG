@@ -19,6 +19,8 @@ extern const int NORMAL_SCREEN_HEIGHT = 960;
 extern const int LARGE_SCREEN_WIDTH = 1920;
 extern const int LARGE_SCREEN_HEIGHT = 1080;
 
+extern bool CCG_QUIT = false;
+
 
 int main(int argc, char* args[])
 {

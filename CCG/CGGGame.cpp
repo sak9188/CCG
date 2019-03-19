@@ -62,7 +62,7 @@ void CGGGame::gameClose()
 void CGGGame::gameLoop()
 {
 	//整个游戏循环
-	while (!quit)
+	while (!CCG_QUIT)
 	{
 		//事件处理
 		while (SDL_PollEvent(&e) != 0)

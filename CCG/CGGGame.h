@@ -32,8 +32,6 @@ private:
 public:
 	CGGGame();
 
-	bool quit = false;
-
 	bool gameInit();
 	void gameStart();
 	void gameClose();
