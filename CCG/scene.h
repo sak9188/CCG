@@ -25,7 +25,7 @@ public:
 	~Scene();
 
 	//先拿出来实验一下
-	std::unique_ptr<Gameround> gameRound;
+	std::shared_ptr<Gameround> gameRound;
 
 	SDL_Surface* getSurface()
 	{

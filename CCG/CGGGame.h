@@ -29,6 +29,9 @@ private:
 
 
 public:
+	//ÄÃ³öÀ´²âÊÔ
+	std::shared_ptr<Gameround> gameround;
+
 	CGGGame();
 
 	bool gameInit();

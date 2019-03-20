@@ -44,7 +44,7 @@ public:
 	std::vector<std::shared_ptr<Card>> BHandCards;
 
 	const int MAX_FIGHT_CARDS = 8;
-	const int MAX_HAND_CARDS = 9;
+	const int MAX_HAND_CARDS = 7;
 
 	Arena();
 	~Arena();

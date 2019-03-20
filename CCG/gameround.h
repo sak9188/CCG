@@ -21,7 +21,11 @@ public:
 		recoder.reset(orecorder);
 	}
 
-	Gameround() {};
+	Gameround() 
+	{
+		arena = std::make_unique<Arena>();
+		recoder = std::make_unique<Recorder>();
+	};
 	~Gameround() {};
 
 

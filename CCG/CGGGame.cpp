@@ -11,11 +11,14 @@ CGGGame::~CGGGame()
 }
 
 CGGGame::CGGGame()
-{
-	initScene = std::make_unique<Scene>();
+{	
 	eventActor = std::make_unique<WINEventActor>();
 
+	gameround = std::make_shared<Gameround>();
+
+	initScene = std::make_unique<Scene>();
 	currentScene = initScene.get();
+	currentScene->gameRound = std::shared_ptr<Gameround>(this->gameround);
 }
 
 bool CGGGame::gameInit()
@@ -39,10 +42,8 @@ bool CGGGame::gameInit()
 
 		//把战士加入场景中
 		currentScene->addItem(ctest);
-
-		//currentScene->gameRound = std::make_unique<Gameround>();
-
-		//currentScene->gameRound->arena->
+				
+		gameround->arena->AHandCards.push_back(std::shared_ptr<Card>(ctest));
 
 		return true;
 
