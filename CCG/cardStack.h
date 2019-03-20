@@ -10,8 +10,8 @@ private:
 	static const int MAX_MAINCARDS = 60;
 	static const int MAX_VICECARDS = 15;
 
-	std::vector<Card> mainCards;
-	std::vector<Card> viceCards;
+	std::vector<std::shared_ptr<Card>> mainCards;
+	std::vector<std::shared_ptr<Card>> viceCards;
 
 	
 

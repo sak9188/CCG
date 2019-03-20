@@ -37,8 +37,6 @@ void WINEventActor::mouseEventDisposer(const SDL_Event& e, Scene& ob)
 	{
 	case (SDL_MOUSEBUTTONDOWN):
 
-		//return card card in 
-
 		//先判断是否有在卡内，有则返回卡，没有则返回null
 		for (auto val : ob.getItems())
 		{

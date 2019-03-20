@@ -31,15 +31,6 @@
     <Filter Include="源文件\IOmachine">
       <UniqueIdentifier>{12c37748-4b18-491f-a4bc-fe68df81608a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="源文件\console">
-      <UniqueIdentifier>{b704ea43-5cf1-4847-b668-6de965475057}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\console\event">
-      <UniqueIdentifier>{bef90fbe-fe43-43cd-b84a-202ff547885e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="源文件\console\event\WIN">
-      <UniqueIdentifier>{68839648-3b19-455c-9355-2c8b25ef66b0}</UniqueIdentifier>
-    </Filter>
     <Filter Include="源文件\abstract">
       <UniqueIdentifier>{f8a4f71e-4150-45c4-a745-60c92354eff9}</UniqueIdentifier>
     </Filter>
@@ -51,6 +42,15 @@
     </Filter>
     <Filter Include="源文件\abstract\card">
       <UniqueIdentifier>{6d5ff052-50c5-4246-99a1-0ceac0623534}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\console">
+      <UniqueIdentifier>{b704ea43-5cf1-4847-b668-6de965475057}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\console\event">
+      <UniqueIdentifier>{bef90fbe-fe43-43cd-b84a-202ff547885e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\console\event\WIN">
+      <UniqueIdentifier>{68839648-3b19-455c-9355-2c8b25ef66b0}</UniqueIdentifier>
     </Filter>
     <Filter Include="源文件\console\render">
       <UniqueIdentifier>{cf4e3c75-19f5-4689-8743-77b93dc10024}</UniqueIdentifier>

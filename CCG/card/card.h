@@ -94,10 +94,17 @@ public:
 		return rect->y + getHeight();
 	}
 
+	void setMoveble(bool Moveble)
+	{
+		isMoveble = Moveble;
+	}
+
 protected:
     std::string name;
     CardType cardType;
     ConsumeType consumeType;
+
+	bool isMoveble = true;
 
 	unsigned int cardSeries;
 
