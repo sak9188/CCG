@@ -45,7 +45,7 @@ public:
 
 	}
 
-	GameObject(std::string str):description(str) {};
+	explicit GameObject(std::string str):description(str) {};
 
 
 	//===========================

@@ -7,10 +7,14 @@
 class Gameround
 {
 private:
+
+
+public:
+
+	//ÄÃ³öÀ´£¬ºÃ²âÊÔ
 	std::unique_ptr<Arena> arena;
 	std::unique_ptr<Recorder> recoder;
 
-public:
 	Gameround(Arena* oarena, Recorder* orecorder)
 	{
 		arena.reset(oarena);

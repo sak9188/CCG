@@ -11,6 +11,14 @@ private:
 	SDL_Surface* surface;
 	SDL_Texture* texture;
 
+
+
+	SDL_Rect* rect;
+
+public:
+
+	//拿出来好测试
+
 	//角色
 	Charactor* charactorA;
 	Charactor* charactorB;
@@ -34,10 +42,6 @@ private:
 	//手牌区
 	std::vector<std::shared_ptr<Card>> AHandCards;
 	std::vector<std::shared_ptr<Card>> BHandCards;
-
-	SDL_Rect* rect;
-
-public:
 
 	const int MAX_FIGHT_CARDS = 8;
 	const int MAX_HAND_CARDS = 9;

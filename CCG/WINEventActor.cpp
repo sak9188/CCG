@@ -42,10 +42,10 @@ void WINEventActor::mouseEventDisposer(const SDL_Event& e, Scene& ob)
 		{
 			std::cout << typeid(*val).name() << std::endl;
 			//再判断是不是Card
-			if (isCard(val))
+			if (isCard(val.get()))
 			{
 				//std::cout << "mother fucker i goted you31" << std::endl;
-				Card* card = dynamic_cast<Card*>(val);
+				Card* card = dynamic_cast<Card*>(val.get());
 				if (card->isContacted(e.button.x, e.button.y))
 				{
 					followCard = card;

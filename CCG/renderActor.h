@@ -34,7 +34,7 @@ public:
 		{
 			val->paintTexture();
 			//std::cout << "name:" << val->getDes() << "\n";
-			renderGameObject(val);
+			renderGameObject(val.get());
 		}
 
 		update();

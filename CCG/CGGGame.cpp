@@ -40,9 +40,9 @@ bool CGGGame::gameInit()
 		//把战士加入场景中
 		currentScene->addItem(ctest);
 
-		currentScene->gameRound = std::make_unique<Gameround>();
+		//currentScene->gameRound = std::make_unique<Gameround>();
 
-		game
+		//currentScene->gameRound->arena->
 
 		return true;
 
