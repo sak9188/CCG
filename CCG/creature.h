@@ -32,6 +32,8 @@ public:
 	{
 	}
 
+	Creature() {};
+
 	virtual void setName(std::string name)
 	{
 		this->name = name;

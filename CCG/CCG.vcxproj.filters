@@ -143,14 +143,14 @@
     <ClInclude Include="eventActor.h">
       <Filter>源文件\console\event</Filter>
     </ClInclude>
-    <ClInclude Include="WINEventActor.h">
-      <Filter>源文件\console\event\WIN</Filter>
-    </ClInclude>
     <ClInclude Include="gameObject.h">
       <Filter>源文件\abstract</Filter>
     </ClInclude>
     <ClInclude Include="renderActor.h">
       <Filter>源文件\console\render</Filter>
+    </ClInclude>
+    <ClInclude Include="WINEventActor.h">
+      <Filter>源文件\console\event\WIN</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

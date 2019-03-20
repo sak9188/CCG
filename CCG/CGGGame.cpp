@@ -38,7 +38,27 @@ bool CGGGame::gameInit()
 		}
 
 		//把战士加入场景中
+		//std::cout << typeid(ctest).name() << std::endl;
+
+		//GameObject* ob = ctest;
+
+		//std::cout << typeid(*ob).name() << std::endl;
+
 		currentScene->addItem(ctest);
+
+		//for (auto val : currentScene->getItems())
+		//{
+		//	std::cout << typeid(*val).name() << std::endl;
+		//	//再判断是不是Card
+		//	//if (isEqualType(&*val, &cardType))
+		//	//{
+		//	//	std::cout << "mother fucker i goted you31\n" << std::endl;
+		//	//	Card* card = dynamic_cast<Card*>(val);
+		//	//	card->isContacted(e.button.x, e.button.y);
+		//	//	std::cout << "123" << std::endl;
+		//	//}
+
+		//}
 
 
 		return true;

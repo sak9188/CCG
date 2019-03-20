@@ -12,11 +12,11 @@
 class Card : public GameObject
 {
 public:
-    virtual void setName(std::string name) = 0;
+	virtual void setName(std::string name) {};
 
-    virtual std::string getName() = 0;
-    virtual CardType getCardType() = 0;
-    virtual ConsumeType getConsumeType() = 0;
+	virtual std::string getName() { return ""; };
+	virtual CardType getCardType() { return CardType::NONE; };
+	virtual ConsumeType getConsumeType() { return ConsumeType::NONE; };
 
 	Card(std::string name, CardType type, ConsumeType consumeType, int x, int y, std::string str) :GameObject(str),name(name),
 		cardType(cardType), consumeType(consumeType) 
@@ -27,6 +27,8 @@ public:
 		rect->w = getWidth();
 		rect->h = getHeight(); 
 	}
+
+	Card() {};
 
 	~Card()
 	{

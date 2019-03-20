@@ -14,6 +14,7 @@ enum class Occurence// "enum class" defines this as a scoped enumeration instead
 
 enum class CardType
 {
+	NONE,
     CREATURE,
     MAGIC,
     CURSE,
@@ -69,6 +70,7 @@ enum class PropertyType
 
 enum class ConsumeType
 {
+	NONE,
     LIFE,
     MAGE,
     MAX_CONSUME_TYPE
