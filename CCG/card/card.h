@@ -104,7 +104,7 @@ protected:
     CardType cardType;
     ConsumeType consumeType;
 
-	bool isMoveble = true;
+	bool isMoveble = false;
 
 	unsigned int cardSeries;
 

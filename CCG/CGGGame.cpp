@@ -43,7 +43,15 @@ bool CGGGame::gameInit()
 		//把战士加入场景中
 		currentScene->addItem(ctest);
 				
-		gameround->arena->AHandCards.push_back(std::shared_ptr<Card>(ctest));
+		gameround->arena->addCardInAHandCards(std::make_shared<Creature>("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, "这是一个战士 ", 2, 3, 1, 0, 0));
+		gameround->arena->addCardInAHandCards(std::make_shared<Creature>("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, "这是一个战士 ", 2, 3, 1, 0, 0));
+		gameround->arena->addCardInAHandCards(std::make_shared<Creature>("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, "这是一个战士 ", 2, 3, 1, 0, 0));
+		gameround->arena->addCardInAHandCards(std::make_shared<Creature>("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, "这是一个战士 ", 2, 3, 1, 0, 0));
+		gameround->arena->addCardInAHandCards(std::make_shared<Creature>("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, "这是一个战士 ", 2, 3, 1, 0, 0));
+		gameround->arena->addCardInAHandCards(std::make_shared<Creature>("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, "这是一个战士 ", 2, 3, 1, 0, 0));
+		gameround->arena->addCardInAHandCards(std::make_shared<Creature>("战士", RaceKind::MACHINE, RaceType::GROUND, PropertyType::EARTH, "这是一个战士 ", 2, 3, 1, 0, 0));
+
+
 
 		return true;
 

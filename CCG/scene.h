@@ -37,6 +37,8 @@ public:
 		return texture.get();
 	}
 
+	void putCardsInScene();
+
 	std::vector<std::shared_ptr<GameObject>> getItems()
 	{
 		return items;
@@ -47,6 +49,8 @@ public:
 	void addItem(GameObject* obj);
 
 	virtual void paintTexture();
+
+
 
 };
 

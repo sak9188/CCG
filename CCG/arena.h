@@ -43,6 +43,19 @@ public:
 	std::vector<std::shared_ptr<Card>> AHandCards;
 	std::vector<std::shared_ptr<Card>> BHandCards;
 
+	bool addCardInAHandCards(std::shared_ptr<Card> card)
+	{
+		if (AHandCards.size() == MAX_HAND_CARDS)
+		{
+			return false;
+		}
+		else
+		{
+			AHandCards.push_back(card);
+			return true;
+		}
+	}
+
 	const int MAX_FIGHT_CARDS = 8;
 	const int MAX_HAND_CARDS = 7;
 

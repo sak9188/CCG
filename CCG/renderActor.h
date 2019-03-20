@@ -16,8 +16,6 @@ private:
 	SDL_Window* window ;
 	SDL_Renderer* renderer ;
 
-
-
 public:
 	
 	RenderAcotor(SDL_Window* window, SDL_Renderer* renderer) :window(window), renderer(renderer) 
@@ -29,13 +27,17 @@ public:
 	{
 		renderClearInBlack();
 
-		//遍历一个容器
-		for (auto val : scene->getItems())
+		if (scene->gameRound != NULL)
 		{
-			val->paintTexture();
-			//std::cout << "name:" << val->getDes() << "\n";
-			renderGameObject(val.get());
+			renderGameround(scene->gameRound.get());
 		}
+		//遍历一个容器
+		//for (auto val : scene->getItems())
+		//{
+		//	val->paintTexture();
+		//	//std::cout << "name:" << val->getDes() << "\n";
+		//	renderGameObject(val.get());
+		//}
 
 		update();
 
@@ -65,6 +67,30 @@ public:
 	void update()
 	{
 		SDL_RenderPresent(renderer);
+	}
+
+	void renderGameround(Gameround* game)
+	{
+		//把舞台拿出来
+		Arena* a = game->arena.get();
+		if (!a->AHandCards.empty())
+		{
+			int count = 0;
+			for (auto val : a->AHandCards)
+			{
+				//std::cout << "name:" << val->getDes() << "\n";
+				val->paintTexture();		
+				val->getRect()->x = (val->getWidth() * count) ;
+				renderGameObject(val.get());
+			}
+		}
+		////出牌区
+		//std::vector<std::shared_ptr<Card>> AFightCards;
+		//std::vector<std::shared_ptr<Card>> BFightCards;
+
+		////手牌区
+		//std::vector<std::shared_ptr<Card>> AHandCards;
+		//std::vector<std::shared_ptr<Card>> BHandCards;
 	}
 
 };
