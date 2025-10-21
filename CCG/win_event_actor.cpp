@@ -1,15 +1,15 @@
-#include "WINEventActor.h"
+#include "win_event_actor.h"
 
 #include <iostream>
 
 #include "scene.h"
 
 
-WINEventActor::WINEventActor()
+win_event_actor::win_event_actor()
 {
 }
 
-void WINEventActor::eventDisposer(const SDL_Event& e, Scene& ob)
+void win_event_actor::eventDisposer(const SDL_Event& e, scene& ob)
 {		
 	switch ( e.type )
 	{
@@ -17,38 +17,38 @@ void WINEventActor::eventDisposer(const SDL_Event& e, Scene& ob)
 		CCG_QUIT = true;
 		break;
 
-	//鼠标事件
+	//录
 	case (SDL_MOUSEBUTTONDOWN):
 	case (SDL_MOUSEBUTTONUP):
 	case (SDL_MOUSEMOTION):
 		mouseEventDisposer(e, ob);
 		break;
 
-	//键盘事件
+	//录
 	case (SDL_KEYDOWN):
 		break;
 	}
 	//std::cout << typeid(e).name() << std::endl;
 }
 
-void WINEventActor::mouseEventDisposer(const SDL_Event& e, Scene& ob)
+void win_event_actor::mouseEventDisposer(const SDL_Event& e, scene& ob)
 {
 	switch (e.type)
 	{
 	case (SDL_MOUSEBUTTONDOWN):
 
-		//先判断是否有在卡内，有则返回卡，没有则返回null
+		//卸欠诳冢蚍祷乜没蚍祷null
 		for (auto val : ob.getItems())
 		{
 			std::cout << typeid(*val).name() << std::endl;
-			//再判断是不是Card
+			//卸遣Card
 			if (isCard(val.get()))
 			{
 				//std::cout << "mother fucker i goted you31" << std::endl;
-				Card* card = dynamic_cast<Card*>(val.get());
-				if (card->isContacted(e.button.x, e.button.y))
+				::card* card_local = dynamic_cast<::card*>(val.get());
+				if (card_local->isContacted(e.button.x, e.button.y))
 				{
-					followCard = card;
+					followCard = card_local;
 					//std::cout << "123" << std::endl;
 				}
 				
@@ -80,7 +80,7 @@ void WINEventActor::mouseEventDisposer(const SDL_Event& e, Scene& ob)
 			//
 			//if (isEqualType(&ob, &creatureType))
 			//{
-			//	Creature& c = dynamic_cast<Creature&>(ob);
+			//	creature& c = dynamic_cast<creature&>(ob);
 			//	std::cout << "mother fucker i goted you2\n" << std::endl;
 			//	if (c.isContacted(e.motion.x, e.motion.y))
 			//	{
@@ -91,7 +91,7 @@ void WINEventActor::mouseEventDisposer(const SDL_Event& e, Scene& ob)
 
 			//}
 			//
-			////先判断
+			////卸
 			//if(isEqualType(&ob, &sceneType))
 			//{
 			//
@@ -101,16 +101,16 @@ void WINEventActor::mouseEventDisposer(const SDL_Event& e, Scene& ob)
 	}
 }
 
-void WINEventActor::keyEventDisposer()
+void win_event_actor::keyEventDisposer()
 {
 }
 
-bool WINEventActor::LMouseButtonMotion(Uint32 states)
+bool win_event_actor::LMouseButtonMotion(Uint32 states)
 {
 	return states & SDL_BUTTON_LMASK;
 }
 
-bool WINEventActor::isCard(GameObject * ob)
+bool win_event_actor::isCard(game_object * ob)
 {
 	if (isEqualType(*ob, creatureType))
 	{

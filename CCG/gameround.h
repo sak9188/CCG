@@ -4,29 +4,29 @@
 #include "arena.h"
 #include "recorder.h"
 
-class Gameround
+class gameround
 {
 private:
 
 
 public:
 
-	//拿出来，好测试
-	std::unique_ptr<Arena> arena;
-	std::unique_ptr<Recorder> recoder;
+    //贸貌
+    std::unique_ptr<arena> arena_inst;
+    std::unique_ptr<recorder> recoder;
 
-	Gameround(Arena* oarena, Recorder* orecorder)
-	{
-		arena.reset(oarena);
-		recoder.reset(orecorder);
-	}
+    gameround(arena* oarena, recorder* orecorder)
+    {
+        arena_inst.reset(oarena);
+        recoder.reset(orecorder);
+    }
 
-	Gameround() 
-	{
-		arena = std::make_unique<Arena>();
-		recoder = std::make_unique<Recorder>();
-	};
-	~Gameround() {};
+    gameround()
+    {
+        arena_inst = std::make_unique<::arena>();
+        recoder = std::make_unique<recorder>();
+    };
+    ~gameround() {};
 
 
 };

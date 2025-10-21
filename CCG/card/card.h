@@ -6,10 +6,10 @@
 #include <string>
 #include <memory>
 
-#include "../enum/CCG_enum.h"
-#include "../gameObject.h"
+#include "../enum/ccg_enum.h"
+#include "../game_object.h"
 
-class Card : public GameObject
+class card : public game_object
 {
 public:
 	virtual void setName(std::string name) {};
@@ -18,7 +18,7 @@ public:
 	virtual CardType getCardType() { return CardType::NONE; };
 	virtual ConsumeType getConsumeType() { return ConsumeType::NONE; };
 
-	Card(std::string name, CardType type, ConsumeType consumeType, int x, int y, std::string str) :GameObject(str),name(name),
+	card(std::string name, CardType type, ConsumeType consumeType, int x, int y, std::string str) :game_object(str),name(name),
 		cardType(cardType), consumeType(consumeType) 
 	{
 		rect.reset(new SDL_Rect());
@@ -28,9 +28,9 @@ public:
 		rect->h = getHeight(); 
 	}
 
-	Card() {};
+	card() {};
 
-	~Card()
+	~card()
 	{
 	}
 

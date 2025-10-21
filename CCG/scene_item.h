@@ -1,12 +1,12 @@
 #ifndef SCENE_ITEM_H
 #define SCENE_ITEM_H
 
-#include "gameObject.h"
-class SceneItem : public GameObject
+#include "game_object.h"
+class scene_item : public game_object
 {
 public:
-	SceneItem();
-	~SceneItem();
+	scene_item();
+	~scene_item();
 
 	virtual void paintTexture();
 };

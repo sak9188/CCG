@@ -7,7 +7,7 @@
 extern SDL_Window* CCG_MAIN_RWINDOW;
 extern SDL_Renderer* CCG_MAIN_RENDERER;
 
-class Creature final : public Card
+class creature final : public card
 {
 private:
 	RaceType raceType;
@@ -18,21 +18,21 @@ private:
 	int defense;
 	bool sacrifice;
 
-	//战吼 调用lua函数
-	//亡语
-	//效果
+	//战 lua
+	//
+	//效
 
 	std::string pathToImg;
 
 public:
 
-	Creature(std::string name , RaceKind raceKind, RaceType raceType, PropertyType proType,std::string des,
-		int attack, int life, int defense, bool sacrifice, int x = 0, int y = 0) :Card(name, CardType::CREATURE, ConsumeType::MAGE, x, y, des),
+	creature(std::string name , RaceKind raceKind, RaceType raceType, PropertyType proType,std::string des,
+		int attack, int life, int defense, bool sacrifice, int x = 0, int y = 0) :card(name, CardType::CREATURE, ConsumeType::MAGE, x, y, des),
 		raceType(raceType), raceKind(raceKind), propertyType(proType), attack(attack), life(life), defense(defense), sacrifice(sacrifice)
 	{
 	}
 
-	Creature() {};
+	creature() {};
 
 	virtual void setName(std::string name)
 	{
@@ -46,12 +46,12 @@ public:
 
 	virtual void paintTexture()
 	{
-		//显示条
+		//示
 		SDL_Rect* toprect = new SDL_Rect();
 		toprect->h = getHeight();
 		toprect->w = getWidth();
 
-		surface.reset(IMG_Load("img/fighter.jpg"));//这个测试过后也要改掉
+		surface.reset(IMG_Load("img/fighter.jpg"));//怨也要牡
 		SDL_Surface* s = SDL_CreateRGBSurfaceWithFormat(0, getWidth(), getHeight(), 32, SDL_PIXELFORMAT_RGBA32);
 
 		SDL_Surface* optimizedSurface = SDL_ConvertSurface(surface.get(), s->format, NULL);

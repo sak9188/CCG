@@ -2,11 +2,11 @@
 
 
 
-Arena::Arena()
+arena::arena()
 {
 }
 
 
-Arena::~Arena()
+arena::~arena()
 {
 }

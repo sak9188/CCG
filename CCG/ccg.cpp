@@ -4,10 +4,10 @@
 #include <SDL_image.h>
 #include <string>
 
-#include "CGGGame.h"
+#include "cgg_game.h"
 
 #include "creature.h"
-#include "enum/CCG_enum.h"
+#include "enum/ccg_enum.h"
 
 extern SDL_Window* CCG_MAIN_WINDOW = NULL;
 extern SDL_Surface* CCG_MAIN_SURFACE = NULL;
@@ -25,7 +25,7 @@ extern bool CCG_QUIT = false;
 int main(int argc, char* args[])
 {
 	//Create game object
-	CGGGame* mainGame = new CGGGame();
+	cgg_game* mainGame = new cgg_game();
 
 	//game.init
 	if (!mainGame->gameInit())

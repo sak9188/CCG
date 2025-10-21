@@ -4,20 +4,20 @@
 #include <vector>
 #include "card/card.h"
 
-class CardStack
+class card_stack
 {
 private:
 	static const int MAX_MAINCARDS = 60;
 	static const int MAX_VICECARDS = 15;
 
-	std::vector<std::shared_ptr<Card>> mainCards;
-	std::vector<std::shared_ptr<Card>> viceCards;
+	std::vector<std::shared_ptr<card>> mainCards;
+	std::vector<std::shared_ptr<card>> viceCards;
 
 	
 
 public:
-	CardStack();
-	~CardStack();
+	card_stack();
+	~card_stack();
 };
 
 #endif // !CARDSTACK_H

@@ -5,27 +5,27 @@
 #include <memory>
 #include <vector>
 
-#include "gameObject.h"
+#include "game_object.h"
 #include "gameround.h"
 
-class Scene : public GameObject
+class scene : public game_object
 {
 private:
-	std::vector<std::shared_ptr<GameObject>> items;
+	std::vector<std::shared_ptr<game_object>> items;
 
-	//Ê÷ĞÎ½á¹¹
-	std::vector<std::shared_ptr<Scene>> scenes;
+	//Î½á¹¹
+	std::vector<std::shared_ptr<scene>> scenes;
 
-	//GameroundÄÚÔÚµÄÓÎÏ·Âß¼­£¬SceneÖĞµÄitems¶¼Òª´ÓÕâÀïÃæÄÃ
+	//GameroundÚµÏ·ß¼SceneĞµitemsÒª
 	
 
 
 public:
-	Scene() {};
-	~Scene();
+	scene() {};
+	~scene();
 
-	//ÏÈÄÃ³öÀ´ÊµÑéÒ»ÏÂ
-	std::shared_ptr<Gameround> gameRound;
+	//Ã³ÊµÒ»
+	std::shared_ptr<gameround> gameRound;
 
 	SDL_Surface* getSurface()
 	{
@@ -39,14 +39,14 @@ public:
 
 	void putCardsInScene();
 
-	std::vector<std::shared_ptr<GameObject>> getItems()
+	std::vector<std::shared_ptr<game_object>> getItems()
 	{
 		return items;
 	}
 
-	void addItems(GameObject* obj, ...);
+	void addItems(game_object* obj, ...);
 
-	void addItem(GameObject* obj);
+	void addItem(game_object* obj);
 
 	virtual void paintTexture();
 

@@ -2,11 +2,11 @@
 
 
 
-Recorder::Recorder()
+recorder::recorder()
 {
 }
 
 
-Recorder::~Recorder()
+recorder::~recorder()
 {
 }

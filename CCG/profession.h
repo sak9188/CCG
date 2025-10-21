@@ -1,8 +1,8 @@
 #pragma once
-class Profession
+class profession
 {
 public:
-	Profession();
-	~Profession();
+	profession();
+	~profession();
 };
 

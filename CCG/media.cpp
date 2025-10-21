@@ -1,15 +1,15 @@
 #include "media.h"
 
-Media::Media()
+media::media()
 {
 }
 
 
-Media::~Media()
+media::~media()
 {
 }
 
-bool Media::loadMedia(GameObject& obj)
+bool media::loadMedia(game_object& obj)
 {
 	//Loading success flag
 	bool success = true;
@@ -25,7 +25,7 @@ bool Media::loadMedia(GameObject& obj)
 	return success;
 }
 
-SDL_Texture* Media::loadTexture(std::string path)
+SDL_Texture* media::loadTexture(std::string path)
 {
 	//The final texture
 	SDL_Texture* newTexture = NULL;

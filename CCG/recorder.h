@@ -1,8 +1,8 @@
 #pragma once
-class Recorder
+class recorder
 {
 public:
-	Recorder();
-	~Recorder();
+	recorder();
+	~recorder();
 };
 

@@ -2,7 +2,7 @@
 #define CGG_CONSTANT_H
 
 #include <SDL.h>
-#include "enum/CCG_enum.h"
+#include "enum/ccg_enum.h"
 
 extern const int NORMAL_SCREEN_WIDTH ;
 extern const int NORMAL_SCREEN_HEIGHT ;
