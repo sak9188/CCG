@@ -2,46 +2,46 @@
 
 #include <SDL_image.h>
 
-Scene::~Scene()
+scene::~scene()
 {
 }
 
-void Scene::putCardsInScene()
+void scene::putCardsInScene()
 {
-	Arena* a = gameRound->arena.get();
+    arena* a = gameRound->arena_inst.get();
 
-	////牌堆
-	//CardStack* ACards;
-	//CardStack* BCards;
+    ////贫
+    //card_stack* ACards;
+    //card_stack* BCards;
 
-	////墓区
-	//std::vector<std::shared_ptr<Card>> ADeadCards;
-	if(a->ADeadCards.empty())
-	//std::vector<std::shared_ptr<Card>> BDeadCards;
+    ////墓
+    //std::vector<std::shared_ptr<card>> ADeadCards;
+    if(a->ADeadCards.empty()) ;
+    //std::vector<std::shared_ptr<card>> BDeadCards;
 
-	////除外区
-	//std::vector<std::shared_ptr<Card>> AOutCards;
-	//std::vector<std::shared_ptr<Card>> BOutCards;
+    ////
+    //std::vector<std::shared_ptr<card>> AOutCards;
+    //std::vector<std::shared_ptr<card>> BOutCards;
 
-	////出牌区
-	//std::vector<std::shared_ptr<Card>> AFightCards;
-	//std::vector<std::shared_ptr<Card>> BFightCards;
+    ////
+    //std::vector<std::shared_ptr<card>> AFightCards;
+    //std::vector<std::shared_ptr<card>> BFightCards;
 
-	////手牌区
-	//std::vector<std::shared_ptr<Card>> AHandCards;
-	//std::vector<std::shared_ptr<Card>> BHandCards;
+    ////
+    //std::vector<std::shared_ptr<card>> AHandCards;
+    //std::vector<std::shared_ptr<card>> BHandCards;
 }
 
-void Scene::addItems(GameObject* obj, ...)
+void scene::addItems(game_object* obj, ...)
 {
 }
 
-void Scene::addItem(GameObject* obj)
+void scene::addItem(game_object* obj)
 {
-	items.push_back(std::shared_ptr<GameObject>(obj));
+    items.push_back(std::shared_ptr<game_object>(obj));
 }
 
-void Scene::paintTexture()
+void scene::paintTexture()
 {
 }
 

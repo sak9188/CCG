@@ -1,5 +1,5 @@
 #include "charactor.h"
 
-Charactor::~Charactor()
+charactor::~charactor()
 {
 }

@@ -5,7 +5,7 @@
 #include <memory>
 #include <string>
 
-class GameObject
+class game_object
 {
 protected:
 
@@ -22,20 +22,20 @@ protected:
 
 	std::string description = "";
 
-	//仅代表游戏中的可显示的实体
+	//戏械目示实
 	std::unique_ptr<SDL_Rect> rect;
 
-	//是否可见
+	//欠杉
 	bool isVisble = true;
 
-	//层
+	//
 	int layer = 0;
 	
-	//是否可以触碰
+	//欠源
 	//bool isToucheble = true;
 
 public:
-	GameObject(SDL_Surface* msurface, SDL_Texture* mtexture, SDL_Rect* mrect,std::string des, bool isVisble = true, int layer = 0):
+	game_object(SDL_Surface* msurface, SDL_Texture* mtexture, SDL_Rect* mrect,std::string des, bool isVisble = true, int layer = 0):
 	isVisble(isVisble),layer(layer),description(des)
 	{
 
@@ -45,13 +45,13 @@ public:
 
 	}
 
-	explicit GameObject(std::string str):description(str) {};
+	explicit game_object(std::string str):description(str) {};
 
 
 	//===========================
-	GameObject();
+	game_object();
 
-	~GameObject();
+	~game_object();
 	//===========================
 
 	SDL_Rect* getRect()

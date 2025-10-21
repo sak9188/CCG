@@ -1,22 +1,22 @@
 # CCG Engine and App
 
 set(CCG_ENGINE_SOURCES
-  CGGGame.cpp
-  WINEventActor.cpp
+  cgg_game.cpp
+  win_event_actor.cpp
   arena.cpp
-  cardStack.cpp
+  card_stack.cpp
   charactor.cpp
-  gameObject.cpp
+  game_object.cpp
   gameround.cpp
   media.cpp
   profession.cpp
   recorder.cpp
   scene.cpp
-  sceneItem.cpp
+  scene_item.cpp
 )
 
 set(CCG_APP_SOURCES
-  CCG.cpp
+  ccg.cpp
 )
 
 # Try to locate SDL2 and SDL2_image in a robust cross-platform way

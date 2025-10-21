@@ -5,16 +5,16 @@
 #include <SDL_image.h>
 #include <string>
 
-#include "CCG_constant.h"
-#include "gameObject.h"
+#include "ccg_constant.h"
+#include "game_object.h"
 
-class Media
+class media
 {
 public:
-	Media();
-	~Media();
+	media();
+	~media();
 
-	bool loadMedia(GameObject & obj);
+	bool loadMedia(game_object & obj);
 	SDL_Texture* loadTexture(std::string path);
 };
 

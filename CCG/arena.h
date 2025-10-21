@@ -5,7 +5,7 @@
 #include <vector>
 #include "charactor.h"
 
-class Arena
+class arena
 {
 private:
 	SDL_Surface* surface;
@@ -17,33 +17,33 @@ private:
 
 public:
 
-	//拿出来好测试
+	//贸貌
 
-	//角色
-	Charactor* charactorA;
-	Charactor* charactorB;
+	//色
+	charactor* charactorA;
+	charactor* charactorB;
 
-	//牌堆
-	CardStack* ACards;
-	CardStack* BCards;
+	//贫
+	card_stack* ACards;
+	card_stack* BCards;
 
-	//墓区
-	std::vector<std::shared_ptr<Card>> ADeadCards;
-	std::vector<std::shared_ptr<Card>> BDeadCards;
+	//墓
+	std::vector<std::shared_ptr<card>> ADeadCards;
+	std::vector<std::shared_ptr<card>> BDeadCards;
 
-	//除外区
-	std::vector<std::shared_ptr<Card>> AOutCards;
-	std::vector<std::shared_ptr<Card>> BOutCards;
+	//
+	std::vector<std::shared_ptr<card>> AOutCards;
+	std::vector<std::shared_ptr<card>> BOutCards;
 
-	//出牌区
-	std::vector<std::shared_ptr<Card>> AFightCards;
-	std::vector<std::shared_ptr<Card>> BFightCards;
+	//
+	std::vector<std::shared_ptr<card>> AFightCards;
+	std::vector<std::shared_ptr<card>> BFightCards;
 
-	//手牌区
-	std::vector<std::shared_ptr<Card>> AHandCards;
-	std::vector<std::shared_ptr<Card>> BHandCards;
+	//
+	std::vector<std::shared_ptr<card>> AHandCards;
+	std::vector<std::shared_ptr<card>> BHandCards;
 
-	bool addCardInAHandCards(std::shared_ptr<Card> card)
+	bool addCardInAHandCards(std::shared_ptr<card> card)
 	{
 		if (AHandCards.size() == MAX_HAND_CARDS)
 		{
@@ -59,7 +59,7 @@ public:
 	const int MAX_FIGHT_CARDS = 8;
 	const int MAX_HAND_CARDS = 7;
 
-	Arena();
-	~Arena();
+	arena();
+	~arena();
 };
 #endif

@@ -2,11 +2,11 @@
 
 
 
-Profession::Profession()
+profession::profession()
 {
 }
 
 
-Profession::~Profession()
+profession::~profession()
 {
 }

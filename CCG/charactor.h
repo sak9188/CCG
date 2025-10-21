@@ -2,10 +2,10 @@
 #define CHARACTOR_H
 
 #include <string>
-#include "cardStack.h"
+#include "card_stack.h"
 #include "profession.h"
 
-class Charactor
+class charactor
 {
 private:
 	std::string name;
@@ -15,15 +15,15 @@ private:
 	int attack;
 	int defense;
 
-	Profession* profession;
+	profession* prof;
 
 
 public:
-	Charactor(std::string name, int life, int mage, int mageAccelerate, int attack, int defense,
-		Profession* profession) :life(life), name(name), mage(mage), mageAccelerate(mageAccelerate), attack(attack), defense(defense)
+	charactor(std::string name, int life, int mage, int mageAccelerate, int attack, int defense,
+		profession* prof) :life(life), name(name), mage(mage), mageAccelerate(mageAccelerate), attack(attack), defense(defense)
 	{};
 
-	~Charactor();
+	~charactor();
 };
 
 #endif
